@@ -1,22 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [Tooltip("left,right,top,bottom")]
-    public Collider2D[] colliders;
-    Collider2D leftCollider;
-    Collider2D rightCollider;
-    Collider2D topCollider;
-    Collider2D bottomCollider;
+    [Tooltip("maping adjust level with numbers")]
+    public int left = 0;
+    public int top = 0;
+    public int right = 0;
+    public int bottom = 0;
     // Start is called before the first frame update
     void Start()
     {
-        leftCollider = colliders[0];
-        rightCollider = colliders[1];
-        topCollider = colliders[2];
-        bottomCollider = colliders[3];
     }
 
     // Update is called once per frame
@@ -25,12 +21,26 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // based on the input determine where to switch levels
+    public void LevelSwitch(int direction)
     {
-        // if player collidea with boarder
-        if (collision.collider.tag == "player")
+        switch (direction)
         {
-
+            // case 0 represent top
+            case 0:
+                SceneManager.LoadScene(top);
+                break;
+            // case 1 represent left
+            case 1:
+                SceneManager.LoadScene(left);
+                break;
+            // case 2 represent bottom
+            case 2:
+                SceneManager.LoadScene(bottom);
+                break;
+            default:
+                SceneManager.LoadScene(right);
+                break;
         }
     }
 }

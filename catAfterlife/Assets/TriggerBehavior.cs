@@ -5,16 +5,16 @@ using UnityEngine;
 public class TriggerBehavior : MonoBehaviour
 {
     public GameObject levelManager;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Tooltip("when collides, tp to which direction\ntop0, left1, bottom2, right3")]
+    public int directionIndicator = 0;
+   
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            var lm  = levelManager.GetComponent<LevelManager>();
+            lm.LevelSwitch(directionIndicator);
+        }
     }
 }
