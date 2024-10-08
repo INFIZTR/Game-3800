@@ -13,6 +13,7 @@ public class TextManager : MonoBehaviour
     public SpriteRenderer spriteL;
     public SpriteRenderer spriteR;
 
+
     public TMP_Text nameText;
     public TMP_Text dialogText;
     
@@ -28,8 +29,12 @@ public class TextManager : MonoBehaviour
 
     public void Awake()
     {
-        nameImageDict["A"] = sprites[0];
-        nameImageDict["B"] = sprites[1];
+        nameImageDict["Witch"] = sprites[0];
+        //This is for the darker version of the opposite image
+        nameImageDict["WitchOP"] = sprites[3];
+        nameImageDict["Cat"] = sprites[2];
+        //This is for the darker version of the opposite image
+        nameImageDict["CatOP"] = sprites[1];
     }
 
     private void UpdateText(string _name, string _dialog)
@@ -40,13 +45,16 @@ public class TextManager : MonoBehaviour
 
     private void UpdateImage(string _name, string position)
     {
+        string darkerOpposite = _name + "OP";
         if (position == "L")
         {
             spriteL.sprite = nameImageDict[_name];
+            spriteR.sprite = nameImageDict[darkerOpposite];
         }
         else if (position == "R")
         {
             spriteR.sprite = nameImageDict[_name];
+            spriteL.sprite = nameImageDict[darkerOpposite];
         }
     }
     
@@ -60,7 +68,7 @@ public class TextManager : MonoBehaviour
     {
         for (int i = 0; i < dialogRows.Length; i++)
         {
-            string[] cells = dialogRows[i].Split(',');
+            string[] cells = dialogRows[i].Split('\t');
             if (cells[0] == "#" && int.Parse(cells[1]) == dialogIndex)
             {
                 isText = true;

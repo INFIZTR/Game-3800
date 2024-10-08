@@ -279,7 +279,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 28d7d4bfb4be91e4eb1cd19ff47514fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -556,14 +556,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogIndex: 0
-  textAsset: {fileID: 4900000, guid: f3abcb3fa8babed428cda9b407b78042, type: 3}
+  textAsset: {fileID: 4900000, guid: cc0e42cd3d65f4443ad2b583bbb2b464, type: 3}
   spriteL: {fileID: 382831850}
   spriteR: {fileID: 66761711}
   nameText: {fileID: 647579708}
   dialogText: {fileID: 1890248731}
   sprites:
   - {fileID: 21300000, guid: b2ab1240652686b4ab832a38615d8319, type: 3}
+  - {fileID: 21300000, guid: 5561e4853f85a0c42b50479fa07e1f28, type: 3}
   - {fileID: 21300000, guid: b5c6bdf53b36f914faf8e6306680e318, type: 3}
+  - {fileID: 21300000, guid: 16602febeb7e70c438d5b9c37565de5f, type: 3}
   isText: 0
   dialogButton: {fileID: 2594872091023181522, guid: 26d6aa44627c25048af5e8c89abd5489, type: 3}
   dialogButtonGroup: {fileID: 1628965663}
