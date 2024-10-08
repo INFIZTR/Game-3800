@@ -7,6 +7,6 @@ public class PuzzleManager : MonoBehaviour
 {
     public void NextLevel()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }

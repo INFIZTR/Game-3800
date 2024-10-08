@@ -8,7 +8,7 @@ public class PlayerMovementGrids : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    private Vector2 movement;
+    private UnityEngine.Vector2 movement;
 
     bool moveForFirstTime = true;
 
@@ -17,14 +17,22 @@ public class PlayerMovementGrids : MonoBehaviour
     public Tilemap playerTracemap;
     public TileBase tileBase;
 
+    private List<Vector3Int> initiatedTilePos;
+
+    public int levelFinishTile = 34;
     int countNewTile = 0;
-    public int levelFinishTile = 36;
     public GameObject puzzleManager;
+    bool loadNextLevel = false;
+
+    public GameObject Canvas;
 
 
     private void Start()
     {
         moveForFirstTime = true;
+        initiatedTilePos = new List<Vector3Int>();
+        loadNextLevel = false;
+        Canvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +47,7 @@ public class PlayerMovementGrids : MonoBehaviour
     {
         // Move the player
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        if (movement != Vector2.zero)
+        if (movement != UnityEngine.Vector2.zero)
         {
             if (CanMove(movement))
             {
@@ -47,34 +55,56 @@ public class PlayerMovementGrids : MonoBehaviour
                 {
                     Vector3Int init = groundTilemap.WorldToCell(transform.position);
                     playerTracemap.SetTile(init, tileBase);
+                    initiatedTilePos.Add(init);
+                    countNewTile++;
+                    moveForFirstTime = false;
                 }
-                Vector2 moveAmount = movement.normalized * 2;
-                Vector3Int vi = groundTilemap.WorldToCell(transform.position += (Vector3)moveAmount);
+                UnityEngine.Vector2 moveAmount = movement.normalized * 2;
+                Vector3Int vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
                 // modify player's movement and setup new tile
-                playerTracemap.SetTile(vi, tileBase);
-                countNewTile++;
+                if (!initiatedTilePos.Contains(vi))
+                {
+                    playerTracemap.SetTile(vi, tileBase);
+                    initiatedTilePos.Add(vi);
+                    countNewTile++;
+                }
+
 
                 for (int i = 0; i < 7; i++)
                 {
                     if (CanMove(movement))
                     {
-                        vi = groundTilemap.WorldToCell(transform.position += (Vector3)moveAmount);
-                        playerTracemap.SetTile(vi, tileBase);
-                        countNewTile++;
+                        vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
+                        if (!initiatedTilePos.Contains(vi))
+                        {
+                            playerTracemap.SetTile(vi, tileBase);
+                            initiatedTilePos.Add(vi);
+                            countNewTile++;
+                        }
                     }
                 }
+
+                Debug.Log(countNewTile);
             }
         }
 
-        if (countNewTile >= levelFinishTile)
+        if (countNewTile >= levelFinishTile && !loadNextLevel)
         {
-            var pm = puzzleManager.GetComponent<PuzzleManager>();
+            StartCoroutine(DelayNextLevel(2));
+            loadNextLevel = true;
+            Canvas.SetActive(true);
         }
         
     }
 
-    
-    private bool CanMove(Vector2 direction)
+    IEnumerator DelayNextLevel(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        var pm = puzzleManager.GetComponent<PuzzleManager>();
+        pm.NextLevel();
+    }
+
+    private bool CanMove(UnityEngine.Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2*(Vector3)direction);
         if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
