@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/graybox_1_spawn.unity
+    path: Assets/Scenes/4_ice.unity
     guid: 4639acdb255de1c40a6d91854679bcdc
   - enabled: 1
-    path: Assets/Scenes/graybox_2_spawn_left.unity
+    path: Assets/Scenes/2_puzzle.unity
     guid: 8ddd625e8e21e4646ad99727ab348db2
   - enabled: 1
     path: Assets/Scenes/graybox_3_spawn_right.unity

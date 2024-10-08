@@ -123,7 +123,7 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isText)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)) && isText)
         {
             GenerateText(textAsset);
         }

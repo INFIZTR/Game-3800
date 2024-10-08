@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PlayerMovementGrids : MonoBehaviour
 {
@@ -24,7 +26,10 @@ public class PlayerMovementGrids : MonoBehaviour
     public GameObject puzzleManager;
     bool loadNextLevel = false;
 
-    public GameObject Canvas;
+    public GameObject GameOver;
+    public int totalSteps = 5;
+    private  int currentStep = 0;
+    public Text steps;
 
 
     private void Start()
@@ -32,7 +37,7 @@ public class PlayerMovementGrids : MonoBehaviour
         moveForFirstTime = true;
         initiatedTilePos = new List<Vector3Int>();
         loadNextLevel = false;
-        Canvas.SetActive(false);
+        GameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +46,16 @@ public class PlayerMovementGrids : MonoBehaviour
         // Get input from the player (WASD or arrow keys)
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (!loadNextLevel)
+        {
+           steps.text = "Remaining Steps: " + (totalSteps - currentStep);
+        }
+
+        if (totalSteps - currentStep < 0)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     void FixedUpdate()
@@ -51,6 +66,7 @@ public class PlayerMovementGrids : MonoBehaviour
         {
             if (CanMove(movement))
             {
+                currentStep++;
                 if (moveForFirstTime)
                 {
                     Vector3Int init = groundTilemap.WorldToCell(transform.position);
@@ -92,7 +108,7 @@ public class PlayerMovementGrids : MonoBehaviour
         {
             StartCoroutine(DelayNextLevel(2));
             loadNextLevel = true;
-            Canvas.SetActive(true);
+            GameOver.SetActive(true);
         }
         
     }
