@@ -6,7 +6,7 @@ using UnityEngine;
 public class TalkController : MonoBehaviour
 {
     public GameObject Button;
-    public GameObject TalkingGUI;
+    public GameObject CanvesGUI;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,7 +23,7 @@ public class TalkController : MonoBehaviour
     {
         if (Button.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
-            TalkingGUI.SetActive(true);
+            CanvesGUI.SetActive(true);
         }
     }
 }
