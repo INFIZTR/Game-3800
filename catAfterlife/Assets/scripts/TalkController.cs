@@ -7,6 +7,7 @@ public class TalkController : MonoBehaviour
 {
     public GameObject Button;
     public GameObject CanvesGUI;
+    public GameObject inventorySystemGUI;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,6 +25,7 @@ public class TalkController : MonoBehaviour
         if (Button.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             CanvesGUI.SetActive(true);
+            inventorySystemGUI.SetActive(false);
         }
     }
 }
