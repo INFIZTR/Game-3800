@@ -31,6 +31,8 @@ public class PlayerMovementGrids : MonoBehaviour
     private  int currentStep = 0;
     public Text steps;
 
+    bool moving = false;
+
 
     private void Start()
     {
@@ -38,14 +40,25 @@ public class PlayerMovementGrids : MonoBehaviour
         initiatedTilePos = new List<Vector3Int>();
         loadNextLevel = false;
         GameOver.SetActive(false);
+
+        moving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Get input from the player (WASD or arrow keys)
+        // only takes in 1 direction at a time
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        // if user pressed both x and y
+        if (movement.x != 0 &  movement.y != 0)
+        {
+            // Prioritize horizontal movement
+            movement.y = 0;
+        }
+        
 
         if (!loadNextLevel)
         {
@@ -62,10 +75,13 @@ public class PlayerMovementGrids : MonoBehaviour
     {
         // Move the player
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        if (movement != UnityEngine.Vector2.zero)
+        if (movement != Vector2.zero)
         {
-            if (CanMove(movement))
+            // remember the movement
+            if (CanMove(movement) && !moving)
             {
+                Vector2 store = movement;
+                moving = true;
                 currentStep++;
                 if (moveForFirstTime)
                 {
@@ -75,7 +91,7 @@ public class PlayerMovementGrids : MonoBehaviour
                     countNewTile++;
                     moveForFirstTime = false;
                 }
-                UnityEngine.Vector2 moveAmount = movement.normalized * 2;
+                UnityEngine.Vector2 moveAmount = store.normalized * 2;
                 Vector3Int vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
                 // modify player's movement and setup new tile
                 if (!initiatedTilePos.Contains(vi))
@@ -88,7 +104,7 @@ public class PlayerMovementGrids : MonoBehaviour
 
                 for (int i = 0; i < 7; i++)
                 {
-                    if (CanMove(movement))
+                    if (CanMove(store))
                     {
                         vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
                         if (!initiatedTilePos.Contains(vi))
@@ -99,6 +115,8 @@ public class PlayerMovementGrids : MonoBehaviour
                         }
                     }
                 }
+
+                moving = false;
 
                 Debug.Log(countNewTile);
             }
