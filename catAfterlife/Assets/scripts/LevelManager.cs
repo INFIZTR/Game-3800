@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
             case 2:
                 SceneManager.LoadScene(bottom);
                 break;
-            default:
+            case 3:
                 SceneManager.LoadScene(right);
                 break;
         }
