@@ -24,7 +24,7 @@ public class TextManager : MonoBehaviour
     
     public GameObject dialogButton;
     public Transform dialogButtonGroup;
-    
+
     public GameObject TalkingGUI;
 
     public void Awake()
