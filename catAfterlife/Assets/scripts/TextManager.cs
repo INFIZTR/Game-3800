@@ -26,6 +26,7 @@ public class TextManager : MonoBehaviour
     public Transform dialogButtonGroup;
 
     public GameObject TalkingGUI;
+    public GameObject InventoryGUI;
 
     public void Awake()
     {
@@ -88,6 +89,7 @@ public class TextManager : MonoBehaviour
                 dialogIndex = 0;
                 Start();
                 TalkingGUI.SetActive(false);
+                InventoryGUI.SetActive(true);
             }
         }
     }
