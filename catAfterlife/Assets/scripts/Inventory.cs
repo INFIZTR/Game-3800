@@ -13,14 +13,14 @@ public class Inventory : MonoBehaviour
         {
             CollectableItem newItem = thisItem.Copy();
             itemList.Add(newItem);
-            //Debug.LogWarning("Adding " + thisItem.name + " to Inventory");
-            //Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
+            Debug.LogWarning("Adding " + thisItem.name + " to Inventory");
+            Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
         }
         else
         {
             itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
                 itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
-            //Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
+            Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
             
         }
 
