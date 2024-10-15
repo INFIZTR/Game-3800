@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
+    public int nextLevel = 2;
     public void NextLevel()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(nextLevel);
     }
 }
