@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -10,6 +12,11 @@ public class InventoryManager : MonoBehaviour
     public Inventory inventory;
     public GameObject slotGtid;
     public SlotManager slot;
+    public bool isopen = false;
+    public RectTransform inventoryUI;
+    public Vector3 upperPosition;
+    private Vector3 lowerPosition;
+    public float animationTime;
     
 
     void Awake()
@@ -49,6 +56,28 @@ public class InventoryManager : MonoBehaviour
         for (int j = 0; j < instance.inventory.itemList.Count; j++)
         {
             CreateInventory(instance.inventory.itemList[j]);
+        }
+    }
+
+    public void Start()
+    {
+        lowerPosition = inventoryUI.anchoredPosition;
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (!isopen)
+            {
+                inventoryUI.DOAnchorPos(upperPosition, animationTime);
+                isopen = true;
+            }
+            else
+            {
+                inventoryUI.DOAnchorPos(lowerPosition, animationTime);
+                isopen = false;
+            }
         }
     }
 }
