@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerMovementGrids : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class PlayerMovementGrids : MonoBehaviour
     public Tilemap groundTilemap;
     public Tilemap collisionTilemap;
     public Tilemap playerTracemap;
-    public TileBase tileBase;
+    public TileBase tile_front;
+    public TileBase tile_back;
+    public TileBase tile_left;
+    public TileBase tile_right;
+
 
     private List<Vector3Int> initiatedTilePos;
 
@@ -71,6 +76,28 @@ public class PlayerMovementGrids : MonoBehaviour
         }
     }
 
+    void setupTile(Vector3Int pos, Vector2 dirction)
+    {
+        if (dirction.x > 0)
+        {
+            playerTracemap.SetTile(pos, tile_right);
+        }
+        else if (dirction.x < 0)
+        {
+            playerTracemap.SetTile(pos, tile_left);
+        }
+        else if (dirction.y < 0)
+        {
+            playerTracemap.SetTile(pos, tile_back);
+        }
+        else
+        {
+            playerTracemap.SetTile(pos, tile_front);
+        }
+
+        initiatedTilePos.Add(pos);
+        countNewTile++;
+    }
     void FixedUpdate()
     {
         // Move the player
@@ -86,9 +113,10 @@ public class PlayerMovementGrids : MonoBehaviour
                 if (moveForFirstTime)
                 {
                     Vector3Int init = groundTilemap.WorldToCell(transform.position);
-                    playerTracemap.SetTile(init, tileBase);
-                    initiatedTilePos.Add(init);
-                    countNewTile++;
+                    //playerTracemap.SetTile(init, tileBase);
+                    //initiatedTilePos.Add(init);
+                    //countNewTile++;
+                    setupTile(init, store);
                     moveForFirstTime = false;
                 }
                 UnityEngine.Vector2 moveAmount = store.normalized * 2;
@@ -96,9 +124,7 @@ public class PlayerMovementGrids : MonoBehaviour
                 // modify player's movement and setup new tile
                 if (!initiatedTilePos.Contains(vi))
                 {
-                    playerTracemap.SetTile(vi, tileBase);
-                    initiatedTilePos.Add(vi);
-                    countNewTile++;
+                    setupTile(vi, store);
                 }
 
 
@@ -109,9 +135,7 @@ public class PlayerMovementGrids : MonoBehaviour
                         vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
                         if (!initiatedTilePos.Contains(vi))
                         {
-                            playerTracemap.SetTile(vi, tileBase);
-                            initiatedTilePos.Add(vi);
-                            countNewTile++;
+                            setupTile(vi, store);
                         }
                     }
                 }
