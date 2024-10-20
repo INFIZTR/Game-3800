@@ -4319,6 +4319,9 @@ MonoBehaviour:
   SelectList: []
   slotGtid: {fileID: 1654202819}
   slot: {fileID: 3743902815212408681, guid: 3330ada23f3e89840952cb11a49774f2, type: 3}
+  posion: {fileID: 7341572330770411073, guid: 0d4af13f40e724b4fbfa2b695c13c325, type: 3}
+  posionGUI: {fileID: 514929998}
+  inventorySystemGUI: {fileID: 1036390003}
 --- !u!1 &1066165969
 GameObject:
   m_ObjectHideFlags: 0
@@ -5970,6 +5973,7 @@ GameObject:
   - component: {fileID: 1588687873}
   - component: {fileID: 1588687872}
   - component: {fileID: 1588687871}
+  - component: {fileID: 1588687874}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -6040,7 +6044,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1588687872}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1588687874}
+        m_TargetAssemblyTypeName: Cook, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1588687872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6079,6 +6095,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588687869}
   m_CullTransparentMesh: 1
+--- !u!114 &1588687874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588687869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfb528ea8b7fff42b87b2e0792b71e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SC: {fileID: 1059062431}
 --- !u!1 &1599845538
 GameObject:
   m_ObjectHideFlags: 0

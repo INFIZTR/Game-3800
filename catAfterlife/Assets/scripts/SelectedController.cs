@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ public class SelectedController : MonoBehaviour
     public List<CollectableItem> SelectList = new List<CollectableItem>();
     public GameObject slotGtid;
     public SlotManager slot;
+    
+    public CollectableItem posion;
+    public GameObject posionGUI;
+    public GameObject inventorySystemGUI;
     
     void Awake()
     {
@@ -62,5 +67,35 @@ public class SelectedController : MonoBehaviour
 
         RefreshList();
         return false;
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            inventorySystemGUI.SetActive(true);
+            posionGUI.SetActive(false);
+        }
+    }
+
+    public void MakePosion()
+    {
+        bool isPosion = true;
+        for (int i = 0; i < 4; i++) {
+            if (!(instance.SelectList[i].itemName == "test item"))
+            {
+                isPosion = false;
+            }
+        }
+        inventorySystemGUI.SetActive(true);
+        if (isPosion)
+        {
+            SelectList.Clear();
+            RefreshList();
+            Inventory.AddNew(posion);
+        }
+        
+        posionGUI.SetActive(false);
+        //inventorySystemGUI.SetActive(true);
     }
 }

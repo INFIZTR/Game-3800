@@ -36,12 +36,8 @@ public class PosionManager : MonoBehaviour
 
     public static void RefreshPosionList()
     {
-        for (int i = 0; i < instance.slotGtid.transform.childCount; i++)
+        for (int i = instance.slotGtid.transform.childCount - 1; i >= 0; i--)
         {
-            if (instance.slotGtid.transform.childCount == 0)
-            {
-                break;
-            }
             Destroy(instance.slotGtid.transform.GetChild(i).gameObject);
         }
 

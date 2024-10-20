@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    static Inventory instance;
     public int maxSize;
     public List<CollectableItem> itemList = new List<CollectableItem>();
     
     public bool used = false;
     
-    
-    private void AddNew(CollectableItem thisItem)
+    void Awake()
     {
-        if (!itemList.Contains(thisItem))
+        if (instance != null)
+        {
+            Destroy(this);
+        }
+        instance = this;
+    }
+    
+    public static void AddNew(CollectableItem thisItem)
+    {
+        if (!instance.itemList.Contains(thisItem))
         {
             CollectableItem newItem = thisItem.Copy();
-            itemList.Add(newItem);
+            instance.itemList.Add(newItem);
              
         }
         else
         {
-            itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
-                itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
+            instance.itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
+                instance.itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
         }
 
         InventoryManager.RefreshInventory();
