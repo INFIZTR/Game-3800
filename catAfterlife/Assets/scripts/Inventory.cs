@@ -4,29 +4,56 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    static Inventory instance;
     public int maxSize;
     public List<CollectableItem> itemList = new List<CollectableItem>();
     
-    private void AddNew(CollectableItem thisItem)
+    public bool used = false;
+    
+    void Awake()
     {
-        if (!itemList.Contains(thisItem))
+        if (instance != null)
+        {
+            Destroy(this);
+        }
+        instance = this;
+    }
+    
+    public static void AddNew(CollectableItem thisItem)
+    {
+        if (!instance.itemList.Contains(thisItem))
         {
             CollectableItem newItem = thisItem.Copy();
-            itemList.Add(newItem);
-            Debug.LogWarning("Adding " + thisItem.name + " to Inventory");
-            Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
+            instance.itemList.Add(newItem);
+             
         }
         else
         {
-            itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
-                itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
-            Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
-            
+            instance.itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
+                instance.itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
         }
 
         InventoryManager.RefreshInventory();
     }
+
+    public bool UseOnce(CollectableItem thisItem)
+    {
+        used = false;
+        if (itemList.Find(item => item.itemName == thisItem.itemName).itemNumber >= 1)
+        {
+            itemList.Find(item => item.itemName == thisItem.itemName).itemNumber--;
+            PosionManager.RefreshPosionList();
+            used = true;
+        }
+        return used;
+    }
     
+    public void ReturnUse(CollectableItem thisItem)
+    {
+        itemList.Find(item => item.itemName == thisItem.itemName).itemNumber++;
+        PosionManager.RefreshPosionList();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Item") && itemList.Count < maxSize)

@@ -8,8 +8,6 @@ public class CollectableItem : MonoBehaviour
     public string itemName;
     public Sprite itemSprite;
     public int itemNumber;
-    [TextArea]
-    public string description;
 
     public bool isPosion;
 
@@ -29,7 +27,6 @@ public class CollectableItem : MonoBehaviour
         CollectableItem newItem = new CollectableItem();
         newItem.itemName = this.itemName;
         newItem.itemNumber = this.itemNumber;
-        newItem.description = this.description;
         newItem.isPosion = this.isPosion;
         newItem.itemSprite = this.itemSprite;
         return newItem;

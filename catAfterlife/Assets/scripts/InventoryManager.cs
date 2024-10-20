@@ -35,21 +35,20 @@ public class InventoryManager : MonoBehaviour
 
     public static void CreateInventory(CollectableItem item)
     {
-        SlotManager newSlot = Instantiate(instance.slot, instance.slotGtid.transform.position,Quaternion.identity);
-        newSlot.gameObject.transform.SetParent(instance.slotGtid.transform);
-        newSlot.slotItem = item;
-        newSlot.slotImage.sprite = item.itemSprite;
-        newSlot.slotNumber.text = item.itemNumber.ToString();
+        if (item.itemNumber != 0)
+        {
+            SlotManager newSlot = Instantiate(instance.slot, instance.slotGtid.transform.position,Quaternion.identity);
+            newSlot.gameObject.transform.SetParent(instance.slotGtid.transform);
+            newSlot.slotItem = item;
+            newSlot.slotImage.sprite = item.itemSprite;
+            newSlot.slotNumber.text = item.itemNumber.ToString();
+        }
     }
 
     public static void RefreshInventory()
     {
-        for (int i = 0; i < instance.slotGtid.transform.childCount; i++)
+        for (int i = instance.slotGtid.transform.childCount - 1; i >= 0; i--)
         {
-            if (instance.slotGtid.transform.childCount == 0)
-            {
-                break;
-            }
             Destroy(instance.slotGtid.transform.GetChild(i).gameObject);
         }
 
