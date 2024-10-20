@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
     public bool isopen = false;
     public RectTransform inventoryUI;
     public Vector3 upperPosition;
-    private Vector3 lowerPosition;
+    public Vector3 lowerPosition;
     public float animationTime;
     
 

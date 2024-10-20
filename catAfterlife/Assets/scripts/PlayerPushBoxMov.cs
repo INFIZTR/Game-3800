@@ -8,9 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerPushBoxMov : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    private UnityEngine.Vector2 movement;
+    private Vector2 movement;
 
     bool moveForFirstTime = true;
 
@@ -29,7 +27,6 @@ public class PlayerPushBoxMov : MonoBehaviour
 
     public GameObject GameOver;
     public int totalSteps = 5;
-    private int currentStep = 0;
 
     public Vector3Int winPos;
 
@@ -49,18 +46,26 @@ public class PlayerPushBoxMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get input from the player (WASD or arrow keys)
-        // only takes in 1 direction at a time
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        // Reset movement every frame
+        movement = Vector2.zero;
 
-        // if user pressed both x and y
-        if (movement.x != 0 & movement.y != 0)
+        // Check for key presses and update movement
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            // Prioritize horizontal movement
-            movement.y = 0;
+            movement.y = 1;
         }
-
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            movement.y = -1;
+        }
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            movement.x = -1;
+        }
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            movement.x = 1;
+        }
     }
 
     void FixedUpdate()
@@ -73,11 +78,10 @@ public class PlayerPushBoxMov : MonoBehaviour
             if (CanMove(movement) && !moving)
             {
                 Vector2 store = movement;
-                currentStep++;
 
                 // if player is moving towards box, and there's space behind box
-                Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)movement.normalized);
-                Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)movement.normalized);
+                Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)store.normalized);
+                Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)store.normalized);
                 if (boxTilemap.HasTile(gridPosition))
                 {
                     boxTilemap.SetTile(gridPosition, null);
@@ -112,7 +116,7 @@ public class PlayerPushBoxMov : MonoBehaviour
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)direction);
-        Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)movement.normalized);
+        Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)direction);
         if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition) 
             || (boxTilemap.HasTile(gridPosition) && (collisionTilemap.HasTile(boxToPut) || boxTilemap.HasTile(boxToPut))))
         {
