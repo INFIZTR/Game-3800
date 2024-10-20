@@ -7,26 +7,44 @@ public class Inventory : MonoBehaviour
     public int maxSize;
     public List<CollectableItem> itemList = new List<CollectableItem>();
     
+    public bool used = false;
+    
+    
     private void AddNew(CollectableItem thisItem)
     {
         if (!itemList.Contains(thisItem))
         {
             CollectableItem newItem = thisItem.Copy();
             itemList.Add(newItem);
-            Debug.LogWarning("Adding " + thisItem.name + " to Inventory");
-            Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
+             
         }
         else
         {
             itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
                 itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
-            Debug.LogWarning(thisItem.name + " has " + itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + " items in Inventory");
-            
         }
 
         InventoryManager.RefreshInventory();
     }
+
+    public bool UseOnce(CollectableItem thisItem)
+    {
+        used = false;
+        if (itemList.Find(item => item.itemName == thisItem.itemName).itemNumber >= 1)
+        {
+            itemList.Find(item => item.itemName == thisItem.itemName).itemNumber--;
+            PosionManager.RefreshPosionList();
+            used = true;
+        }
+        return used;
+    }
     
+    public void ReturnUse(CollectableItem thisItem)
+    {
+        itemList.Find(item => item.itemName == thisItem.itemName).itemNumber++;
+        PosionManager.RefreshPosionList();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Item") && itemList.Count < maxSize)
