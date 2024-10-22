@@ -11,7 +11,7 @@ public class PlayerMovementGrids : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    private UnityEngine.Vector2 movement;
+    private Vector2 movement;
 
     bool moveForFirstTime = true;
 
@@ -24,7 +24,7 @@ public class PlayerMovementGrids : MonoBehaviour
     public TileBase tile_right;
 
 
-    private List<Vector3Int> initiatedTilePos;
+    private HashSet<Vector3Int> initiatedTilePos;
 
     public int levelFinishTile = 34;
     int countNewTile = 0;
@@ -42,7 +42,7 @@ public class PlayerMovementGrids : MonoBehaviour
     private void Start()
     {
         moveForFirstTime = true;
-        initiatedTilePos = new List<Vector3Int>();
+        initiatedTilePos = new HashSet<Vector3Int>();
         loadNextLevel = false;
         GameOver.SetActive(false);
 
@@ -119,7 +119,7 @@ public class PlayerMovementGrids : MonoBehaviour
                     setupTile(init, store);
                     moveForFirstTime = false;
                 }
-                UnityEngine.Vector2 moveAmount = store.normalized * 2;
+                Vector2 moveAmount = store.normalized * 2;
                 Vector3Int vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
                 // modify player's movement and setup new tile
                 if (!initiatedTilePos.Contains(vi))
@@ -152,7 +152,6 @@ public class PlayerMovementGrids : MonoBehaviour
             loadNextLevel = true;
             GameOver.SetActive(true);
         }
-        
     }
 
     IEnumerator DelayNextLevel(float delay)
