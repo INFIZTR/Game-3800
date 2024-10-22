@@ -4,36 +4,37 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    static Inventory instance;
     public int maxSize;
-    public List<CollectableItem> itemList = new List<CollectableItem>();
+
+    // itemlist should be shared across scene
+    static public List<CollectableItem> itemList = new List<CollectableItem>();
     
     public bool used = false;
-    
-    void Awake()
+    public InventoryManager inventoryManager;
+
+    private void Start()
     {
-        if (instance != null)
-        {
-            Destroy(this);
-        }
-        instance = this;
+        Debug.Log(itemList.Count);
+        inventoryManager.RefreshInventory();
     }
-    
-    public static void AddNew(CollectableItem thisItem)
+
+
+    public void AddNew(CollectableItem thisItem)
     {
-        if (!instance.itemList.Contains(thisItem))
+        if (!itemList.Contains(thisItem))
         {
             CollectableItem newItem = thisItem.Copy();
-            instance.itemList.Add(newItem);
-             
+            itemList.Add(newItem);
+            Debug.Log(itemList.Count);
+
         }
         else
         {
-            instance.itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
-                instance.itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
+            itemList.Find(item => item.itemName == thisItem.itemName).itemNumber = 
+            itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
         }
 
-        InventoryManager.RefreshInventory();
+        inventoryManager.RefreshInventory();
     }
 
     public bool UseOnce(CollectableItem thisItem)
@@ -59,6 +60,8 @@ public class Inventory : MonoBehaviour
         if (collision.gameObject.CompareTag("Item") && itemList.Count < maxSize)
         {
             CollectableItem thisItem = collision.gameObject.GetComponent<CollectableItem>();
+
+            // if player has collide with the CollectableItem, collect it
             AddNew(thisItem);
             thisItem.destoryItself();
         }

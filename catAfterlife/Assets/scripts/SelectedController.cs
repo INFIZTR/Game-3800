@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SelectedController : MonoBehaviour
 {
+    public Inventory inventory;
     static SelectedController instance;
     public List<CollectableItem> SelectList = new List<CollectableItem>();
     public GameObject slotGtid;
@@ -92,7 +93,7 @@ public class SelectedController : MonoBehaviour
         {
             SelectList.Clear();
             RefreshList();
-            Inventory.AddNew(posion);
+            inventory.AddNew(posion);
         }
         
         posionGUI.SetActive(false);
