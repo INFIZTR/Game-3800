@@ -1,5 +1,5 @@
 Tag	ID	Name	Position	Text	JumpTo
-#	0	Witch	R	"I still do not know what I¡¯m supposed to do here. I feel like I am just wandering, searching without understanding why."	1
+#	0	Witch	R	"I still do not know what I am supposed to do here. I feel like I am just wandering, searching without understanding why."	1
 #	1	Turtle	L	"Wandering is part of it, little one, but your path has always been there, waiting for you. You just need to see it."	2
 #	2	Witch	R	But what is the path? How do I find the answers I need?	3
 #	3	Turtle	L	"You here have to help your friends move on to their final lives, yes, but there is more to it. To succeed, "	4
@@ -21,5 +21,5 @@ Tag	ID	Name	Position	Text	JumpTo
 #	19	Turtle	L	"The puzzles will remain, and the ingredients will wait. But only when you truly understand the hearts of your friends,"	20
 #	20	Turtle	L	?Only then will you be able to brew the potion that grants them the perfect final endings.	21
 #	21	Witch	R	"I understand now. I need to explore, solve these puzzles, gather the right ingredients, and brew potions along the way to help me. It is all part of my journey."	22
-#	22	Turtle	L	"Exactly. Each step brings you closer¡ªnot just to helping her, but to understanding yourself. Now, go. The path is waiting for you."	23
+#	22	Turtle	L	"Exactly. Each step brings you closer, not just to helping her, but to understanding yourself. Now, go. The path is waiting for you. Go left and you will know what to do next"	23
 END	23				
