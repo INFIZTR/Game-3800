@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSize: 27
-  itemList: []
   used: 0
+  inventoryManager: {fileID: 0}
 --- !u!1 &66761709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,6 +2511,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 33987310}
   m_SourcePrefab: {fileID: 100100000, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+--- !u!114 &644407527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6471376714232134590, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+  m_PrefabInstance: {fileID: 644407526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33987309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48df6dab3d765064182f3d31b4181aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &645154734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,11 +4155,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 33987310}
-  slotGtid: {fileID: 645154734}
+  slotGrid: {fileID: 0}
   slot: {fileID: 3743902815212408681, guid: b65b2c9e4a0c7864992dc975ce51d7d3, type: 3}
   isopen: 0
   inventoryUI: {fileID: 1036390004}
   upperPosition: {x: 0, y: -225.1, z: 0}
+  lowerPosition: {x: 0, y: 0, z: 0}
   animationTime: 1
 --- !u!1 &1053743382
 GameObject:
@@ -4316,6 +4328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60595b0bf6727bf49a3972dcc8b5974a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 644407527}
   SelectList: []
   slotGtid: {fileID: 1654202819}
   slot: {fileID: 3743902815212408681, guid: 3330ada23f3e89840952cb11a49774f2, type: 3}
