@@ -33,9 +33,9 @@ public class TextManager : MonoBehaviour
         nameImageDict["Witch"] = sprites[0];
         //This is for the darker version of the opposite image
         nameImageDict["WitchOP"] = sprites[3];
-        nameImageDict["Cat"] = sprites[2];
+        nameImageDict["Turtle"] = sprites[2];
         //This is for the darker version of the opposite image
-        nameImageDict["CatOP"] = sprites[1];
+        nameImageDict["TurtleOP"] = sprites[1];
     }
 
     private void UpdateText(string _name, string _dialog)
