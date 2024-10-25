@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerMovementGrids : MonoBehaviour
 {
@@ -70,7 +69,7 @@ public class PlayerMovementGrids : MonoBehaviour
            steps.text = "Remaining Steps: " + (totalSteps - currentStep);
         }
 
-        if (totalSteps - currentStep < 0)
+        if (totalSteps - currentStep <= 0)
         {
             SceneManager.LoadScene(1);
         }
@@ -100,57 +99,61 @@ public class PlayerMovementGrids : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // Move the player
-        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        if (movement != Vector2.zero)
+        // only allows if game not over
+        if (currentStep<totalSteps && !loadNextLevel)
         {
-            // remember the movement
-            if (CanMove(movement) && !moving)
+            // Move the player
+            //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            if (movement != Vector2.zero)
             {
-                Vector2 store = movement;
-                moving = true;
-                currentStep++;
-                if (moveForFirstTime)
+                // remember the movement
+                if (CanMove(movement) && !moving)
                 {
-                    Vector3Int init = groundTilemap.WorldToCell(transform.position);
-                    //playerTracemap.SetTile(init, tileBase);
-                    //initiatedTilePos.Add(init);
-                    //countNewTile++;
-                    setupTile(init, store);
-                    moveForFirstTime = false;
-                }
-                Vector2 moveAmount = store.normalized * 2;
-                Vector3Int vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
-                // modify player's movement and setup new tile
-                if (!initiatedTilePos.Contains(vi))
-                {
-                    setupTile(vi, store);
-                }
-
-
-                for (int i = 0; i < 7; i++)
-                {
-                    if (CanMove(store))
+                    Vector2 store = movement;
+                    moving = true;
+                    currentStep++;
+                    if (moveForFirstTime)
                     {
-                        vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
-                        if (!initiatedTilePos.Contains(vi))
+                        Vector3Int init = groundTilemap.WorldToCell(transform.position);
+                        //playerTracemap.SetTile(init, tileBase);
+                        //initiatedTilePos.Add(init);
+                        //countNewTile++;
+                        setupTile(init, store);
+                        moveForFirstTime = false;
+                    }
+                    Vector2 moveAmount = store.normalized * 2;
+                    Vector3Int vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
+                    // modify player's movement and setup new tile
+                    if (!initiatedTilePos.Contains(vi))
+                    {
+                        setupTile(vi, store);
+                    }
+
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        if (CanMove(store))
                         {
-                            setupTile(vi, store);
+                            vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
+                            if (!initiatedTilePos.Contains(vi))
+                            {
+                                setupTile(vi, store);
+                            }
                         }
                     }
+
+                    moving = false;
+
+                    Debug.Log(countNewTile);
                 }
-
-                moving = false;
-
-                Debug.Log(countNewTile);
             }
-        }
 
-        if (countNewTile >= levelFinishTile && !loadNextLevel)
-        {
-            StartCoroutine(DelayNextLevel(2));
-            loadNextLevel = true;
-            GameOver.SetActive(true);
+            if (countNewTile >= levelFinishTile && !loadNextLevel)
+            {
+                StartCoroutine(DelayNextLevel(2));
+                loadNextLevel = true;
+                GameOver.SetActive(true);
+            }
         }
     }
 

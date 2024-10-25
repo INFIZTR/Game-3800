@@ -20,7 +20,6 @@ public class PlayerPushBoxMov : MonoBehaviour
 
     private List<Vector3Int> initiatedTilePos;
 
-    public int levelFinishTile = 34;
     int countNewTile = 0;
     public GameObject puzzleManager;
     bool loadNextLevel = false;
@@ -98,6 +97,7 @@ public class PlayerPushBoxMov : MonoBehaviour
         }
 
         Vector3Int currentPos = groundTilemap.WorldToCell(transform.position);
+        Debug.Log(currentPos);
         if (currentPos == winPos && !loadNextLevel)
         {
             StartCoroutine(DelayNextLevel(2));
@@ -125,6 +125,14 @@ public class PlayerPushBoxMov : MonoBehaviour
         return true;
     }
 
+    // handled by start button
+    public void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Reload the current scene
+        SceneManager.LoadScene(currentSceneIndex);
+    }
 
 
 }
