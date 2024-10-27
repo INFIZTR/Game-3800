@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -71,7 +72,7 @@ public class PlayerMovementGrids : MonoBehaviour
 
         if (totalSteps - currentStep <= 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -144,10 +145,10 @@ public class PlayerMovementGrids : MonoBehaviour
 
                     moving = false;
 
-                    Debug.Log(countNewTile);
                 }
             }
 
+            UnityEngine.Debug.Log(countNewTile);
             if (countNewTile >= levelFinishTile && !loadNextLevel)
             {
                 StartCoroutine(DelayNextLevel(2));
@@ -164,16 +165,34 @@ public class PlayerMovementGrids : MonoBehaviour
         pm.NextLevel();
     }
 
+    
     private bool CanMove(UnityEngine.Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2*(Vector3)direction);
-        if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
+        //if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
+        if (!groundTilemap.HasTile(gridPosition))
         {
             return false;
         }
         return true;
     }
     
+
+    /*
+    private bool CanMove(Vector2 direction)
+    {
+        Stopwatch stopwatch = Stopwatch.StartNew();  // Start the stopwatch
+
+        Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)direction);
+        bool canMove = !groundTilemap.HasTile(gridPosition) || !collisionTilemap.HasTile(gridPosition);
+
+        stopwatch.Stop();  // Stop the stopwatch
+        UnityEngine.Debug.Log("CanMove runtime: " + stopwatch.ElapsedMilliseconds + " ms");
+
+        return canMove;
+    }
+    */
+
 
 
 }
