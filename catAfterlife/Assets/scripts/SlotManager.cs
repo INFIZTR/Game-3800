@@ -10,6 +10,8 @@ public class SlotManager : MonoBehaviour
    public Image slotImage;
    public TMP_Text slotNumber;
    
+   //public PosionManager posionManager;
+   
    public void ItemOnClickedL()
    {
       bool used = PosionManager.UseOneThing(slotItem);

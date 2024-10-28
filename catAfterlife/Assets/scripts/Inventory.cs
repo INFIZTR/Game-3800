@@ -21,6 +21,11 @@ public class Inventory : MonoBehaviour
 
     public void AddNew(CollectableItem thisItem)
     {
+        if (thisItem == null)
+        {
+            return;
+        }
+
         if (!itemList.Contains(thisItem))
         {
             CollectableItem newItem = thisItem.Copy();

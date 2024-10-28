@@ -123,26 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &33987309 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7627968709398523605, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
-  m_PrefabInstance: {fileID: 644407526}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &33987310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33987309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48df6dab3d765064182f3d31b4181aeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSize: 27
-  used: 0
-  inventoryManager: {fileID: 0}
 --- !u!1 &66761709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2435,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6471376714232134590, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 1036390007}
     - target: {fileID: 321040006154448535, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -2506,17 +2490,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7627968709398523605, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 33987310}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
 --- !u!114 &644407527 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -6471376714232134590, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
   m_PrefabInstance: {fileID: 644407526}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33987309}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48df6dab3d765064182f3d31b4181aeb, type: 3}
@@ -2881,7 +2862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d503dc10201b1174c967d973c211625d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 33987310}
+  inventory: {fileID: 644407527}
   slotGtid: {fileID: 1066165969}
   slot: {fileID: 3743902815212408681, guid: b65b2c9e4a0c7864992dc975ce51d7d3, type: 3}
 --- !u!1 &683815723
@@ -4154,8 +4135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b115890f60407e4b94cd7ccbe6302ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 33987310}
-  slotGrid: {fileID: 0}
+  inventory: {fileID: 644407527}
+  slotGrid: {fileID: 645154734}
   slot: {fileID: 3743902815212408681, guid: b65b2c9e4a0c7864992dc975ce51d7d3, type: 3}
   isopen: 0
   inventoryUI: {fileID: 1036390004}
@@ -4335,6 +4316,9 @@ MonoBehaviour:
   posion: {fileID: 7341572330770411073, guid: 0d4af13f40e724b4fbfa2b695c13c325, type: 3}
   posionGUI: {fileID: 514929998}
   inventorySystemGUI: {fileID: 1036390003}
+  posionRecipe: {fileID: 4900000, guid: 5b8fa81d3144c6e46b07ba659771bf6b, type: 3}
+  posionList:
+  - {fileID: 7341572330770411073, guid: 0d4af13f40e724b4fbfa2b695c13c325, type: 3}
 --- !u!1 &1066165969
 GameObject:
   m_ObjectHideFlags: 0

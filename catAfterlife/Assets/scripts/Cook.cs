@@ -8,6 +8,7 @@ public class Cook : MonoBehaviour
     public SelectedController SC;
     public void Onclick()
     {
-        SC.MakePosion();
+        //SC.MakePosion();
+        SC.ReadRecipe();
     }
 }
