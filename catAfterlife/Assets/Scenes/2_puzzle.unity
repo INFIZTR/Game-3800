@@ -460,6 +460,7 @@ MonoBehaviour:
   top: 2
   right: 3
   bottom: 4
+  rewardPanel: {fileID: 0}
 --- !u!1001 &289467516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,6 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 0
+  loadRewardPanel: 1
 --- !u!1 &538096774
 GameObject:
   m_ObjectHideFlags: 0
@@ -57244,11 +57246,11 @@ SceneRoots:
   - {fileID: 1987387918}
   - {fileID: 608997621}
   - {fileID: 174434581}
+  - {fileID: 478335829}
   - {fileID: 1521995405834484078}
   - {fileID: 362286158}
   - {fileID: 1327713320}
   - {fileID: 289467516}
   - {fileID: 120362287}
   - {fileID: 169485744}
-  - {fileID: 478335829}
   - {fileID: 1823452389}

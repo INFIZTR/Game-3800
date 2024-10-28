@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
     {
         if (thisItem == null)
         {
+            Debug.Log(11122);
             return;
         }
 

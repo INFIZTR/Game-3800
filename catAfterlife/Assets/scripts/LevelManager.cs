@@ -10,15 +10,25 @@ public class LevelManager : MonoBehaviour
     public int top = 0;
     public int right = 0;
     public int bottom = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
+    // determine if display reward panel at start of the scene
+    public static bool displayRewardPanel = false;
+
+    public GameObject rewardPanel;
+
+    private void Start()
     {
-        
+        if (rewardPanel == null)
+        {
+            rewardPanel = GameObject.FindGameObjectWithTag("RewardPanel");
+        }
+
+        if (displayRewardPanel)
+        {
+            // display reward panel
+            rewardPanel.SetActive(true);
+            displayRewardPanel = false;
+        }
     }
 
     // based on the input determine where to switch levels
@@ -43,4 +53,6 @@ public class LevelManager : MonoBehaviour
                 break;
         }
     }
+
+
 }

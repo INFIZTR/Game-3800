@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - RewardPanel
   layers:
   - Default
   - TransparentFX
