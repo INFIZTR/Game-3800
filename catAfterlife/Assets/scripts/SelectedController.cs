@@ -15,6 +15,10 @@ public class SelectedController : MonoBehaviour
     public GameObject posionGUI;
     public GameObject inventorySystemGUI;
     
+    public TextAsset posionRecipe;
+    private string[] recipeRows;
+    public List<CollectableItem> posionList = new List<CollectableItem>();
+    
     void Awake()
     {
         if (instance != null)
@@ -78,8 +82,33 @@ public class SelectedController : MonoBehaviour
             posionGUI.SetActive(false);
         }
     }
+    
+    public void ReadRecipe()
+    {
+        recipeRows = posionRecipe.text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        for (int i = 1; i < recipeRows.Length; i++)
+        {
+            bool isPosion = true;
+            string[] cells = recipeRows[i].Split('\t');
+            for (int j = 0; j < 3; j++) {
+                if (!(instance.SelectList[j].itemName == cells[j]))
+                {
+                    isPosion = false;
+                }
+            }
+            inventorySystemGUI.SetActive(true);
+            if (isPosion)
+            {
+                SelectList.Clear();
+                RefreshList();
+                inventory.AddNew(posionList.Find(x => x.itemName == cells[4]));
+                posionGUI.SetActive(false);
+                break;
+            }
+        }
+    }
 
-    public void MakePosion()
+    /*public void MakePosion()
     {
         bool isPosion = true;
         for (int i = 0; i < 4; i++) {
@@ -98,5 +127,5 @@ public class SelectedController : MonoBehaviour
         
         posionGUI.SetActive(false);
         //inventorySystemGUI.SetActive(true);
-    }
+    }*/
 }
