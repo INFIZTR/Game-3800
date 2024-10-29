@@ -117,7 +117,7 @@ public class PlayerPushBoxMov : MonoBehaviour
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)direction);
         Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)direction);
-        if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition) 
+        if (!groundTilemap.HasTile(gridPosition) 
             || (boxTilemap.HasTile(gridPosition) && (collisionTilemap.HasTile(boxToPut) || boxTilemap.HasTile(boxToPut))))
         {
             return false;
