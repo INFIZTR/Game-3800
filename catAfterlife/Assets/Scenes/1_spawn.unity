@@ -875,8 +875,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 295.85, y: 88.2}
-  m_SizeDelta: {x: -546, y: -144.5}
+  m_AnchoredPosition: {x: 292.59998, y: 66.89}
+  m_SizeDelta: {x: -552.5, y: -107.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171778772
 MonoBehaviour:
@@ -8183,7 +8183,7 @@ PrefabInstance:
 <<<<<<< Updated upstream
     - target: {fileID: 7069001323197003412, guid: ec5656c55eeb6bc4eab8392122b3800e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
 =======
 >>>>>>> Stashed changes
