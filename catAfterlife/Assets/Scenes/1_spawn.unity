@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3b0a4e3f23cf142991a85e04be2f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 1
+  left: 6
   top: 2
   right: 3
   bottom: 4
@@ -8180,10 +8180,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: reward_panel
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 7069001323197003412, guid: ec5656c55eeb6bc4eab8392122b3800e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 8696523916410370543, guid: ec5656c55eeb6bc4eab8392122b3800e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
