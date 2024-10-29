@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8085896596f7b1d4c935e9926d4ddf4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 3
+  nextLevel: 0
   loadRewardPanel: 1
 --- !u!1 &538096774
 GameObject:
