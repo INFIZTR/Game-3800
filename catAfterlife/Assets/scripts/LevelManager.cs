@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject rewardPanel;
 
-    private void Start()
+    private void Awake()
     {
         if (rewardPanel == null)
         {
@@ -28,6 +28,10 @@ public class LevelManager : MonoBehaviour
             // display reward panel
             rewardPanel.SetActive(true);
             displayRewardPanel = false;
+        }
+        else
+        {
+            rewardPanel.SetActive(false);
         }
     }
 

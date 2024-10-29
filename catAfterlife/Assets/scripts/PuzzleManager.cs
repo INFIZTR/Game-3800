@@ -9,10 +9,11 @@ public class PuzzleManager : MonoBehaviour
     public bool loadRewardPanel = false;
     public void NextLevel()
     {
-        SceneManager.LoadScene(nextLevel);
         if (loadRewardPanel)
         {
             LevelManager.displayRewardPanel = true;
         }
+        SceneManager.LoadScene(nextLevel);
+
     }
 }

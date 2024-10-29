@@ -459,6 +459,7 @@ MonoBehaviour:
   top: 2
   right: 3
   bottom: 4
+  rewardPanel: {fileID: 0}
 --- !u!1001 &289467516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -706,6 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 0
+  loadRewardPanel: 1
 --- !u!1 &608997619
 GameObject:
   m_ObjectHideFlags: 0
@@ -68197,7 +68199,7 @@ MonoBehaviour:
   puzzleManager: {fileID: 478335828}
   GameOver: {fileID: 1955428186}
   totalSteps: 14
-  steps: {fileID: 945559385}
+  steps: {fileID: 0}
 --- !u!81 &8994861879116847170
 AudioListener:
   m_ObjectHideFlags: 0
