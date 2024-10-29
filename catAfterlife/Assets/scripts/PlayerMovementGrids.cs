@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class PlayerMovementGrids : MonoBehaviour
 {
@@ -34,7 +36,8 @@ public class PlayerMovementGrids : MonoBehaviour
     public GameObject GameOver;
     public int totalSteps = 5;
     private  int currentStep = 0;
-    public Text steps;
+    public GameObject steps;
+    TextMeshProUGUI stepsText;
 
     bool moving = false;
 
@@ -45,6 +48,7 @@ public class PlayerMovementGrids : MonoBehaviour
         initiatedTilePos = new HashSet<Vector3Int>();
         loadNextLevel = false;
         GameOver.SetActive(false);
+        stepsText = steps.GetComponent<TextMeshProUGUI>();
 
         moving = false;
     }
@@ -67,7 +71,8 @@ public class PlayerMovementGrids : MonoBehaviour
 
         if (!loadNextLevel)
         {
-           steps.text = "Remaining Steps: " + (totalSteps - currentStep);
+            string newText = "Remaining Steps: " + (totalSteps - currentStep);
+            stepsText.SetText(newText);
         }
 
         if (totalSteps - currentStep <= 0)
