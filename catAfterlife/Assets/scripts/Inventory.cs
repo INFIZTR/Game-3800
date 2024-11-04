@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+[CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory")]
+public class Inventory : ScriptableObject
 {
     public int maxSize;
 
     // itemlist should be shared across scene
-    static public List<CollectableItem> itemList = new List<CollectableItem>();
+    public List<CollectableItem> itemList = new List<CollectableItem>();
     
     public bool used = false;
-    public InventoryManager inventoryManager;
+    //public InventoryManager inventoryManager;
 
     private void Start()
     {
         Debug.Log(itemList.Count);
-        inventoryManager.RefreshInventory();
+        InventoryManager.RefreshInventory();
     }
 
 
@@ -23,7 +24,7 @@ public class Inventory : MonoBehaviour
     {
         if (thisItem == null)
         {
-            Debug.Log(11122);
+            //Debug.Log(11122);
             return;
         }
 
@@ -31,7 +32,7 @@ public class Inventory : MonoBehaviour
         {
             CollectableItem newItem = thisItem.Copy();
             itemList.Add(newItem);
-            Debug.Log(itemList.Count);
+            //Debug.Log(itemList.Count);
 
         }
         else
@@ -40,7 +41,7 @@ public class Inventory : MonoBehaviour
             itemList.Find(item => item.itemName == thisItem.itemName).itemNumber + thisItem.itemNumber;
         }
 
-        inventoryManager.RefreshInventory();
+        InventoryManager.RefreshInventory();
     }
 
     public bool UseOnce(CollectableItem thisItem)
@@ -60,18 +61,4 @@ public class Inventory : MonoBehaviour
         itemList.Find(item => item.itemName == thisItem.itemName).itemNumber++;
         PosionManager.RefreshPosionList();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Item") && itemList.Count < maxSize)
-        {
-            CollectableItem thisItem = collision.gameObject.GetComponent<CollectableItem>();
-
-            // if player has collide with the CollectableItem, collect it
-            AddNew(thisItem);
-            thisItem.destoryItself();
-        }
-    }
-    
-    
 }

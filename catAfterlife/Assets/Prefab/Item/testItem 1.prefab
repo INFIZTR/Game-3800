@@ -146,4 +146,5 @@ MonoBehaviour:
   itemName: test Posion
   itemSprite: {fileID: 21300000, guid: b2ab1240652686b4ab832a38615d8319, type: 3}
   itemNumber: 1
-  isPosion: 0
+  isPosion: 1
+  inventory: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}

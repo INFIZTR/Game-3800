@@ -2439,6 +2439,22 @@ PrefabInstance:
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 1036390007}
+    - target: {fileID: 99255278549974356, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 99255278549974356, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 99255278549974356, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 99255278549974356, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+      propertyPath: m_Offset.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 321040006154448535, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -2492,17 +2508,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
---- !u!114 &644407527 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -6471376714232134590, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
-  m_PrefabInstance: {fileID: 644407526}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48df6dab3d765064182f3d31b4181aeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &645154734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d503dc10201b1174c967d973c211625d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 644407527}
+  inventory: {fileID: 0}
   slotGtid: {fileID: 1066165969}
   slot: {fileID: 3743902815212408681, guid: b65b2c9e4a0c7864992dc975ce51d7d3, type: 3}
 --- !u!1 &683815723
@@ -4135,7 +4140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b115890f60407e4b94cd7ccbe6302ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 644407527}
+  inventory: {fileID: 0}
   slotGrid: {fileID: 645154734}
   slot: {fileID: 3743902815212408681, guid: b65b2c9e4a0c7864992dc975ce51d7d3, type: 3}
   isopen: 0
@@ -4309,7 +4314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60595b0bf6727bf49a3972dcc8b5974a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 644407527}
+  inventory: {fileID: 0}
   SelectList: []
   slotGtid: {fileID: 1654202819}
   slot: {fileID: 3743902815212408681, guid: 3330ada23f3e89840952cb11a49774f2, type: 3}

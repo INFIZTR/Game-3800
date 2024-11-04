@@ -41,9 +41,9 @@ public class PosionManager : MonoBehaviour
             Destroy(instance.slotGtid.transform.GetChild(i).gameObject);
         }
 
-        for (int j = 0; j < Inventory.itemList.Count; j++)
+        for (int j = 0; j < instance.inventory.itemList.Count; j++)
         {
-            CreatePosionList(Inventory.itemList[j]);
+            CreatePosionList(instance.inventory.itemList[j]);
         }
     }
 

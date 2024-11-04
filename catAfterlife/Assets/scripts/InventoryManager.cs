@@ -20,38 +20,47 @@ public class InventoryManager : MonoBehaviour
     // default position of inventory
     public Vector3 lowerPosition;
     public float animationTime;
-    
+
+    public void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this);
+        }
+        instance = this;
+    }
+
     private void OnEnable()
     {
         RefreshInventory();
     }
 
-    public void CreateInventory(CollectableItem item)
+    public static void CreateInventory(CollectableItem item)
     {
         if (item.itemNumber != 0)
         {
-            SlotManager newSlot = Instantiate(slot, slotGrid.transform.position,Quaternion.identity);
-            newSlot.gameObject.transform.SetParent(slotGrid.transform);
+            SlotManager newSlot = Instantiate(instance.slot, instance.slotGrid.transform.position,Quaternion.identity);
+            newSlot.gameObject.transform.SetParent(instance.slotGrid.transform);
             newSlot.gameObject.transform.localScale = Vector3.one;
             newSlot.slotItem = item;
             newSlot.slotImage.sprite = item.itemSprite;
             //Instantiate(newSlot.slotImage.sprite);
             newSlot.slotNumber.text = item.itemNumber.ToString();
-            Debug.Log(item.itemSprite.ToString());
+            //Debug.Log(item.itemSprite.ToString());
 
         }
     }
 
-    public void RefreshInventory()
+    public static void RefreshInventory()
     {
-        for (int i = slotGrid.transform.childCount - 1; i >= 0; i--)
+        for (int i = instance.slotGrid.transform.childCount - 1; i >= 0; i--)
         {
-            Destroy(slotGrid.transform.GetChild(i).gameObject);
+            Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
         }
 
-        for (int j = 0; j < Inventory.itemList.Count; j++)
+        for (int j = 0; j < instance.inventory.itemList.Count; j++)
         {
-            CreateInventory(Inventory.itemList[j]);
+            CreateInventory(instance.inventory.itemList[j]);
         }
     }
 
