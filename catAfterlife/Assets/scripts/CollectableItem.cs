@@ -38,11 +38,11 @@ public class CollectableItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && inventory.itemList.Count < inventory.maxSize)
         {
-            CollectableItem thisItem = collision.gameObject.GetComponent<CollectableItem>();
+            //CollectableItem thisItem = collision.gameObject.GetComponent<CollectableItem>();
 
             // if player has collide with the CollectableItem, collect it
-            inventory.AddNew(thisItem);
-            thisItem.destoryItself();
+            inventory.AddNew(this);
+            this.destoryItself();
         }
     }
 
