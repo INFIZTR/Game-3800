@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class CollectableItem : MonoBehaviour
     public int itemNumber;
 
     public bool isPosion;
+    
+    public Inventory inventory;
 
     public override bool Equals(object item)
     {
@@ -29,6 +32,18 @@ public class CollectableItem : MonoBehaviour
         newItem.isPosion = this.isPosion;
         newItem.itemSprite = this.itemSprite;
         return newItem;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && inventory.itemList.Count < inventory.maxSize)
+        {
+            //CollectableItem thisItem = collision.gameObject.GetComponent<CollectableItem>();
+
+            // if player has collide with the CollectableItem, collect it
+            inventory.AddNew(this);
+            this.destoryItself();
+        }
     }
 
     public void destoryItself()
