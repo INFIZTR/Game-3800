@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60595b0bf6727bf49a3972dcc8b5974a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}
   SelectList: []
   slotGtid: {fileID: 1009873260}
   slot: {fileID: 3743902815212408681, guid: 3330ada23f3e89840952cb11a49774f2, type: 3}
@@ -2192,7 +2192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d503dc10201b1174c967d973c211625d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}
   slotGtid: {fileID: 1708274560}
   slot: {fileID: 3743902815212408681, guid: b65b2c9e4a0c7864992dc975ce51d7d3, type: 3}
 --- !u!114 &523333889
