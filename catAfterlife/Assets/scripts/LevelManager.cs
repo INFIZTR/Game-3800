@@ -14,7 +14,24 @@ public class LevelManager : MonoBehaviour
     // determine if display reward panel at start of the scene
     public static bool displayRewardPanel = false;
 
+    public GameObject[] destroiableWalls;
+
     public GameObject rewardPanel;
+
+    public static bool invokeSceneForFirstTime = true;
+
+    private void Start()
+    {
+        if (invokeSceneForFirstTime && destroiableWalls.Length > 0)
+        {
+            foreach (GameObject wall in destroiableWalls)
+            {
+                wall.SetActive(true);
+            }
+
+            invokeSceneForFirstTime =false;
+        }
+    }
 
     private void Awake()
     {
@@ -28,6 +45,14 @@ public class LevelManager : MonoBehaviour
             // display reward panel
             rewardPanel.SetActive(true);
             displayRewardPanel = false;
+
+            if (destroiableWalls.Length > 0)
+            {
+                foreach (GameObject wall in destroiableWalls)
+                {
+                    wall.SetActive(false);
+                }
+            }
         }
         else
         {
