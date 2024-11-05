@@ -9,6 +9,12 @@ public class TalkController : MonoBehaviour
     public GameObject CanvesGUI;
     public GameObject inventorySystemGUI;
 
+
+
+    private void Start()
+    {
+        CanvesGUI.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         Button.SetActive(true);
@@ -26,6 +32,8 @@ public class TalkController : MonoBehaviour
         {
             CanvesGUI.SetActive(true);
             inventorySystemGUI.SetActive(false);
+
+
         }
     }
 }

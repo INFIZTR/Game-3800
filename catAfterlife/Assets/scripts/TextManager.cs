@@ -28,14 +28,43 @@ public class TextManager : MonoBehaviour
     public GameObject TalkingGUI;
     public GameObject InventoryGUI;
 
+    public GameObject player;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        GenerateText(textAsset);
+
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
+
     public void Awake()
     {
+
         nameImageDict["Witch"] = sprites[0];
         //This is for the darker version of the opposite image
         nameImageDict["WitchOP"] = sprites[3];
         nameImageDict["Turtle"] = sprites[2];
         //This is for the darker version of the opposite image
         nameImageDict["TurtleOP"] = sprites[1];
+    }
+
+    private void OnEnable()
+    {
+        // lock player's movement
+        var playerS = player.GetComponent<PlayerMovement>();
+        playerS.LockMovement();
+    }
+
+    private void OnDisable()
+    {
+        // unlock player's movement
+        var playerS = player.GetComponent<PlayerMovement>();
+        playerS.UnlockMovement();
     }
 
     private void UpdateText(string _name, string _dialog)
@@ -114,12 +143,6 @@ public class TextManager : MonoBehaviour
         {
             Destroy(dialogButtonGroup.GetChild(i).gameObject);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        GenerateText(textAsset);
     }
 
     // Update is called once per frame

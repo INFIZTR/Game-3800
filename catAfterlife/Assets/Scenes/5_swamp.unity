@@ -826,6 +826,7 @@ MonoBehaviour:
   dialogButtonGroup: {fileID: 1946740512}
   TalkingGUI: {fileID: 147666060}
   InventoryGUI: {fileID: 862834982}
+  player: {fileID: 1218314513}
 --- !u!114 &147666063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4991,6 +4992,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200427497}
   m_CullTransparentMesh: 1
+--- !u!1 &1218314513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7627968709398523605, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+  m_PrefabInstance: {fileID: 8936413270290114413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1246746148
 GameObject:
   m_ObjectHideFlags: 0

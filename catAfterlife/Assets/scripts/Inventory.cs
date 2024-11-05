@@ -13,10 +13,15 @@ public class Inventory : ScriptableObject
     public bool used = false;
     //public InventoryManager inventoryManager;
 
-    private void Start()
+    void Start()
     {
         Debug.Log(itemList.Count);
         InventoryManager.RefreshInventory();
+    }
+
+    private void OnDisable()
+    {
+        itemList = new List<CollectableItem>();
     }
 
 

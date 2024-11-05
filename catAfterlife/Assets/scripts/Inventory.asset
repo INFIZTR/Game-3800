@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   maxSize: 36
-  itemList: []
-  used: 0
+  itemList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  used: 1
