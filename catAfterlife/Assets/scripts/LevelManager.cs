@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     // determine if display reward panel at start of the scene
     public static bool displayRewardPanel = false;
 
-    public GameObject[] destroiableWalls;
+    public GameObject[] destroiableWalls = {};
 
     public GameObject rewardPanel;
 
@@ -40,24 +40,28 @@ public class LevelManager : MonoBehaviour
             rewardPanel = GameObject.FindGameObjectWithTag("RewardPanel");
         }
 
-        if (displayRewardPanel)
+        if (rewardPanel != null)
         {
-            // display reward panel
-            rewardPanel.SetActive(true);
-            displayRewardPanel = false;
-
-            if (destroiableWalls.Length > 0)
+            if (displayRewardPanel)
             {
-                foreach (GameObject wall in destroiableWalls)
+                // display reward panel
+                rewardPanel.SetActive(true);
+                displayRewardPanel = false;
+
+                if (destroiableWalls.Length > 0)
                 {
-                    wall.SetActive(false);
+                    foreach (GameObject wall in destroiableWalls)
+                    {
+                        wall.SetActive(false);
+                    }
                 }
             }
+            else
+            {
+                rewardPanel.SetActive(false);
+            }
         }
-        else
-        {
-            rewardPanel.SetActive(false);
-        }
+       
     }
 
     // based on the input determine where to switch levels

@@ -8269,6 +8269,10 @@ PrefabInstance:
     - target: {fileID: 8696523916410370543, guid: ec5656c55eeb6bc4eab8392122b3800e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}
+    - target: {fileID: 8696523916410370543, guid: ec5656c55eeb6bc4eab8392122b3800e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddNew
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
