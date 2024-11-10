@@ -797,6 +797,7 @@ MonoBehaviour:
   top: 0
   right: 3
   bottom: 4
+  rewardPanel: {fileID: 0}
 --- !u!1 &222991894
 GameObject:
   m_ObjectHideFlags: 0
@@ -6356,7 +6357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa878472037ed614093062e18d0a2e6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd21b5812008b9a4697d4770e9386c57, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6365,7 +6366,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 20
+  m_PixelsPerUnitMultiplier: 2.3
 --- !u!222 &1727129195
 CanvasRenderer:
   m_ObjectHideFlags: 0

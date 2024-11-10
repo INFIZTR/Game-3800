@@ -1415,6 +1415,7 @@ MonoBehaviour:
   top: 2
   right: 7
   bottom: 4
+  rewardPanel: {fileID: 0}
 --- !u!1001 &200412559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9390,7 +9391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01444dd33e7b60b4e93b0e8023540a3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e40751c86858144db7578b73bd6d1bb, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9399,7 +9400,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 20
+  m_PixelsPerUnitMultiplier: 1.4
 --- !u!222 &1727129195
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10939,6 +10940,8 @@ MonoBehaviour:
   posion: {fileID: 7341572330770411073, guid: 0d4af13f40e724b4fbfa2b695c13c325, type: 3}
   posionGUI: {fileID: 1934078004}
   inventorySystemGUI: {fileID: 862834982}
+  posionRecipe: {fileID: 0}
+  posionList: []
 --- !u!114 &1979577641
 MonoBehaviour:
   m_ObjectHideFlags: 0
