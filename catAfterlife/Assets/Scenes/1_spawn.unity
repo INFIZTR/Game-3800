@@ -934,9 +934,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   left: 7
-  top: 2
+  top: 4
   right: 3
-  bottom: 4
+  bottom: 5
   destroiableWalls:
   - {fileID: 484509610}
   - {fileID: 928164428}
@@ -3777,6 +3777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb647aded942e444d99cf567a0508d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 2
 --- !u!1 &1191679928
 GameObject:
   m_ObjectHideFlags: 0

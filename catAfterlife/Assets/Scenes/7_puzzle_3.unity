@@ -460,6 +460,7 @@ MonoBehaviour:
   right: 3
   bottom: 4
   destroiableWalls: []
+  blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 0}
 --- !u!1001 &289467516
 PrefabInstance:
@@ -67768,7 +67769,7 @@ Transform:
   m_GameObject: {fileID: 7723845916684157072}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69000053, y: 0, z: -5}
+  m_LocalPosition: {x: 0.69000053, y: -0.79, z: -5}
   m_LocalScale: {x: 0.49999997, y: 0.49999997, z: 0.49999997}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -67809,7 +67810,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.14
+  orthographic size: 11.65
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
