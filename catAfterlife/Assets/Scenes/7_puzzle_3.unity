@@ -459,6 +459,7 @@ MonoBehaviour:
   top: 2
   right: 3
   bottom: 4
+  destroiableWalls: []
   rewardPanel: {fileID: 0}
 --- !u!1001 &289467516
 PrefabInstance:
@@ -706,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8085896596f7b1d4c935e9926d4ddf4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 0
+  nextLevel: 1
   loadRewardPanel: 1
 --- !u!1 &608997619
 GameObject:

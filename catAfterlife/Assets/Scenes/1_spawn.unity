@@ -933,7 +933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3b0a4e3f23cf142991a85e04be2f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 6
+  left: 7
   top: 2
   right: 3
   bottom: 4

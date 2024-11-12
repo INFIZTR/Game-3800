@@ -32,8 +32,6 @@ public class TalkController : MonoBehaviour
         {
             CanvesGUI.SetActive(true);
             inventorySystemGUI.SetActive(false);
-
-
         }
     }
 }

@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/2_puzzle.unity
     guid: 8ddd625e8e21e4646ad99727ab348db2
   - enabled: 1
-    path: Assets/Scenes/4_ice.unity
-    guid: 4639acdb255de1c40a6d91854679bcdc
-  - enabled: 1
     path: Assets/Scenes/5_swamp.unity
     guid: ff71c42631d345e47aa02171c9adcd38
+  - enabled: 1
+    path: Assets/Scenes/4_ice.unity
+    guid: 4639acdb255de1c40a6d91854679bcdc
   - enabled: 1
     path: Assets/Scenes/3_lava.unity
     guid: c5d9793691cdc35478af7f2c52a948c6

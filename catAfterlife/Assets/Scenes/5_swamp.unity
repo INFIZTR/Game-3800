@@ -791,7 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: 0
   top: 2
-  right: 1
+  right: 2
   bottom: 4
   destroiableWalls: []
   rewardPanel: {fileID: 1118425762}
