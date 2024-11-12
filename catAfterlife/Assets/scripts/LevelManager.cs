@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public static bool displayRewardPanel = false;
 
     public GameObject[] destroiableWalls = {};
+    public GameObject blockDestroyedText;
 
     public GameObject rewardPanel;
 
@@ -22,6 +23,11 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        if (invokeSceneForFirstTime && blockDestroyedText != null)
+        {
+            blockDestroyedText.SetActive(false);
+        }
+
         if (invokeSceneForFirstTime && destroiableWalls.Length > 0)
         {
             foreach (GameObject wall in destroiableWalls)
@@ -54,6 +60,7 @@ public class LevelManager : MonoBehaviour
                     {
                         wall.SetActive(false);
                     }
+
                 }
             }
             else

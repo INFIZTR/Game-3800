@@ -789,11 +789,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3b0a4e3f23cf142991a85e04be2f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 0
+  left: 1
   top: 2
   right: 2
   bottom: 4
   destroiableWalls: []
+  blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 1118425762}
 --- !u!224 &203335069 stripped
 RectTransform:

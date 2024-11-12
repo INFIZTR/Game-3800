@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class RewardPanel : MonoBehaviour
 {
+    public GameObject blockDestroyedText;
 
     public void Hide()
     {
         gameObject.SetActive(false);
+        if (blockDestroyedText != null)
+        {
+            blockDestroyedText.SetActive(true);
+        }
     }
 }
