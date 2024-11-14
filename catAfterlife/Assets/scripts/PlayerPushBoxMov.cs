@@ -79,6 +79,10 @@ public class PlayerPushBoxMov : MonoBehaviour
                 currentStep++;
                 StartCoroutine(MovePlayer(movement));
             }
+            else
+            {
+                updateTileLocker = false;
+            }
         }
 
         // Check if the player reached the win position
