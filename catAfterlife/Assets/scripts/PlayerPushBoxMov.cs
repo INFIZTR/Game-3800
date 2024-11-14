@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class PlayerPushBoxMov : MonoBehaviour
 {
-    private Vector2 movement;
+    public float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    private UnityEngine.Vector2 movement;
 
     bool moveForFirstTime = true;
 
@@ -20,16 +22,21 @@ public class PlayerPushBoxMov : MonoBehaviour
 
     private List<Vector3Int> initiatedTilePos;
 
+    public int levelFinishTile = 34;
     int countNewTile = 0;
     public GameObject puzzleManager;
     bool loadNextLevel = false;
 
     public GameObject GameOver;
     public int totalSteps = 5;
+    private int currentStep = 0;
 
     public Vector3Int winPos;
 
     bool moving = false;
+
+    Vector2 lastCalledMovement = Vector2.zero;
+    bool updateTileLocker = false;
 
 
     private void Start()
@@ -38,66 +45,44 @@ public class PlayerPushBoxMov : MonoBehaviour
         initiatedTilePos = new List<Vector3Int>();
         loadNextLevel = false;
         GameOver.SetActive(false);
-
+        updateTileLocker = false;
         moving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Reset movement every frame
-        movement = Vector2.zero;
+        if (!updateTileLocker)
+        {
+            // Get input from the player (WASD or arrow keys)
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        // Check for key presses and update movement
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            movement.y = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            movement.y = -1;
-        }
-        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            movement.x = -1;
-        }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            movement.x = 1;
+            // Prioritize horizontal movement if both directions are pressed
+            if (movement.x != 0 && movement.y != 0)
+            {
+                movement.y = 0;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        // Move the player
-        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        if (movement != Vector2.zero)
+        if (movement != Vector2.zero && !updateTileLocker)
         {
-            // remember the movement
+            Debug.Log("Entering lock");
+
+            updateTileLocker = true;
+
             if (CanMove(movement) && !moving)
             {
-                Vector2 store = movement;
-
-                // if player is moving towards box, and there's space behind box
-                Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)store.normalized);
-                Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)store.normalized);
-                if (boxTilemap.HasTile(gridPosition))
-                {
-                    boxTilemap.SetTile(gridPosition, null);
-                    boxTilemap.SetTile(boxToPut, boxTile);
-                }
-
-                Vector2 moveAmount = store.normalized * 2;
-                transform.position += (Vector3)moveAmount;
-                Debug.Log("current step: "+ groundTilemap.WorldToCell(transform.position));
-
-                movement = Vector2.zero;
-                Debug.Log(countNewTile);
+                currentStep++;
+                StartCoroutine(MovePlayer(movement));
             }
         }
 
+        // Check if the player reached the win position
         Vector3Int currentPos = groundTilemap.WorldToCell(transform.position);
-        Debug.Log(currentPos);
         if (currentPos == winPos && !loadNextLevel)
         {
             StartCoroutine(DelayNextLevel(2));
@@ -105,6 +90,41 @@ public class PlayerPushBoxMov : MonoBehaviour
             GameOver.SetActive(true);
         }
     }
+
+    private IEnumerator MovePlayer(Vector2 direction)
+    {
+        moving = true;
+
+        // Calculate the target position and move amount
+        Vector2 moveAmount = direction.normalized * 2f;
+        Vector3 targetPosition = transform.position + (Vector3)moveAmount;
+
+        // Handle box movement logic if needed
+        Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)direction.normalized);
+        Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)direction.normalized);
+
+        if (boxTilemap.HasTile(gridPosition))
+        {
+            boxTilemap.SetTile(gridPosition, null);
+            boxTilemap.SetTile(boxToPut, boxTile);
+        }
+
+        // Smoothly move the player to the target position
+        float elapsed = 0f;
+        while (elapsed < 1f)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPosition, elapsed);
+            elapsed += Time.deltaTime * moveSpeed;
+            yield return null;
+        }
+
+        // Snap to final position and reset movement
+        transform.position = targetPosition;
+        movement = Vector2.zero;
+        updateTileLocker = false;
+        moving = false;
+    }
+
 
     IEnumerator DelayNextLevel(float delay)
     {
@@ -116,26 +136,15 @@ public class PlayerPushBoxMov : MonoBehaviour
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2 * (Vector3)direction);
-        Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)direction);
-        if (// if there isn't available spot for player to put
-            !groundTilemap.HasTile(gridPosition) 
-            ||
-            // or the next spot for player to put has a box 
-            (boxTilemap.HasTile(gridPosition) && (collisionTilemap.HasTile(boxToPut) || boxTilemap.HasTile(boxToPut))))
+        Vector3Int boxToPut = groundTilemap.WorldToCell(transform.position + 4 * (Vector3)movement.normalized);
+        if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition)
+            || (boxTilemap.HasTile(gridPosition) && (collisionTilemap.HasTile(boxToPut) || boxTilemap.HasTile(boxToPut))))
         {
             return false;
         }
         return true;
     }
 
-    // handled by start button
-    public void ReloadLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        // Reload the current scene
-        SceneManager.LoadScene(currentSceneIndex);
-    }
 
 
 }
