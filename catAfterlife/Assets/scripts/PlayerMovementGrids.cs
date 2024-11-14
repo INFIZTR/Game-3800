@@ -50,6 +50,7 @@ public class PlayerMovementGrids : MonoBehaviour
         GameOver.SetActive(false);
         stepsText = steps.GetComponent<TextMeshProUGUI>();
 
+        movement = Vector2.zero;
         moving = false;
     }
 
