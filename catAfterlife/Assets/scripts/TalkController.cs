@@ -10,7 +10,6 @@ public class TalkController : MonoBehaviour
     public GameObject inventorySystemGUI;
 
 
-
     private void Start()
     {
         CanvesGUI.SetActive(false);

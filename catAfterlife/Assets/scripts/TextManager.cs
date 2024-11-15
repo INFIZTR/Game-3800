@@ -10,15 +10,15 @@ public class TextManager : MonoBehaviour
     public int dialogIndex = 0;
     private string[] dialogRows;
     public TextAsset textAsset;
-    public SpriteRenderer spriteL;
-    public SpriteRenderer spriteR;
+    public Image spriteL;
+    public Image spriteR;
 
 
     public TMP_Text nameText;
     public TMP_Text dialogText;
     
-    public List<Sprite> sprites = new List<Sprite>();
-    Dictionary<string, Sprite> nameImageDict = new Dictionary<string, Sprite>();
+    public List<Image> sprites = new List<Image>();
+    Dictionary<string, Image> nameImageDict = new Dictionary<string, Image>();
 
     [FormerlySerializedAs("istext")] public bool isText;
     
@@ -78,13 +78,17 @@ public class TextManager : MonoBehaviour
         string darkerOpposite = _name + "OP";
         if (position == "L")
         {
-            spriteL.sprite = nameImageDict[_name];
-            spriteR.sprite = nameImageDict[darkerOpposite];
+            spriteL.gameObject.SetActive(true);
+            spriteR.gameObject.SetActive(false);
+            //spriteL = nameImageDict[_name];
+            //spriteR = nameImageDict[darkerOpposite];
         }
         else if (position == "R")
         {
-            spriteR.sprite = nameImageDict[_name];
-            spriteL.sprite = nameImageDict[darkerOpposite];
+            spriteL.gameObject.SetActive(false);
+            spriteR.gameObject.SetActive(true);
+            //spriteR = nameImageDict[_name];
+            //spriteL = nameImageDict[darkerOpposite];
         }
     }
     
@@ -148,7 +152,8 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)) && isText)
+        //if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)) && isText)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && isText)
         {
             GenerateText(textAsset);
         }
