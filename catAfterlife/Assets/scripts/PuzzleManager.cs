@@ -17,10 +17,15 @@ public class PuzzleManager : MonoBehaviour
         }
         if (destroyWall)
         {
-            Debug.Log(12222222222222222222);
             LevelManager.doDestoryWall = true;
         }
         SceneManager.LoadScene(nextLevel);
+    }
 
+    public void ReloadCurrentLevel()
+    {
+        // Get the active scene (current level) and reload it
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
     }
 }
