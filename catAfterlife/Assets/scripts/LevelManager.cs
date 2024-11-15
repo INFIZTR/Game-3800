@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
 
     // determine if display reward panel at start of the scene
     public static bool displayRewardPanel = false;
+    public static bool doDestoryWall = false;
 
     public GameObject[] destroiableWalls = {};
     public GameObject blockDestroyedText;
@@ -28,7 +29,7 @@ public class LevelManager : MonoBehaviour
             blockDestroyedText.SetActive(false);
         }
 
-        if (invokeSceneForFirstTime && destroiableWalls.Length > 0)
+        if (!doDestoryWall && invokeSceneForFirstTime && destroiableWalls.Length > 0)
         {
             foreach (GameObject wall in destroiableWalls)
             {
@@ -54,19 +55,26 @@ public class LevelManager : MonoBehaviour
                 rewardPanel.SetActive(true);
                 displayRewardPanel = false;
 
+                
+            }
+            else
+            {
+                rewardPanel.SetActive(false);
+            }
+        }
+
+        if (destroiableWalls != null)
+        {
+            if (doDestoryWall)
+            {
                 if (destroiableWalls.Length > 0)
                 {
                     foreach (GameObject wall in destroiableWalls)
                     {
                         wall.SetActive(false);
                     }
-
                 }
-            }
-            else
-            {
-                rewardPanel.SetActive(false);
-            }
+            } 
         }
        
     }

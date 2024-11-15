@@ -710,6 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: 1
   loadRewardPanel: 1
+  destroyWall: 1
 --- !u!1 &608997619
 GameObject:
   m_ObjectHideFlags: 0

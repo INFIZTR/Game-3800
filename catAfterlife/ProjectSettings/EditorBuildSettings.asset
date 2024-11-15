@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/1_spawn.unity
     guid: c9adb22d82d16b8459f8f79280a75dab
   - enabled: 1
-    path: Assets/Scenes/2_puzzle.unity
+    path: Assets/Scenes/2P_ATWD.unity
     guid: 8ddd625e8e21e4646ad99727ab348db2
   - enabled: 1
     path: Assets/Scenes/5_swamp.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/6_puzzle_2.unity
     guid: 45de4295f76d5a042b358d14b233fa33
   - enabled: 1
-    path: Assets/Scenes/7_puzzle_3.unity
+    path: Assets/Scenes/3P_ATWD.unity
     guid: 94f198c237d48a547ae2308c38e87d95
   - enabled: 1
     path: Assets/Scenes/7_puzzle_test.unity
