@@ -11,6 +11,11 @@ public class PosionManager : MonoBehaviour
     public GameObject slotGtid;
     public SlotManager slot;
 
+    private AudioSource aud;
+
+    // play the background music
+    private GameObject bgPlayer;
+
     void Awake()
     {
         if (instance != null)
@@ -23,6 +28,20 @@ public class PosionManager : MonoBehaviour
     private void OnEnable()
     {
         RefreshPosionList();
+        aud = GetComponent<AudioSource>();
+        aud.Play();
+        bgPlayer = GameObject.FindGameObjectWithTag("BackGroundMusic");
+        bgPlayer.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        aud.Stop();
+        // resume playing bg music
+        if (bgPlayer != null)
+        {
+            bgPlayer.SetActive(true);
+        }
     }
 
     public static void CreatePosionList(CollectableItem item)
