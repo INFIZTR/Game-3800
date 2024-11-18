@@ -22,7 +22,7 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            if (Input.anyKey)
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 CanvesGUI.SetActive(false);
             }
