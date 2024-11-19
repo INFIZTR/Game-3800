@@ -103,6 +103,7 @@ public class SelectedController : MonoBehaviour
                 RefreshList();
                 inventory.AddNew(posionList.Find(x => x.itemName == cells[4]));
                 posionGUI.SetActive(false);
+                PosionManager.numOfIngradient = 0;
                 break;
             }
         }
