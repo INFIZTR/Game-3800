@@ -30,6 +30,9 @@ public class TextManager : MonoBehaviour
 
     public GameObject player;
 
+    // count how many times have the dialogue been invoked
+    private int triggerCount = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,8 +66,11 @@ public class TextManager : MonoBehaviour
     private void OnDisable()
     {
         // unlock player's movement
-        var playerS = player.GetComponent<PlayerMovement>();
-        playerS.UnlockMovement();
+        if (player != null)
+        {
+            var playerS = player.GetComponent<PlayerMovement>();
+            playerS.UnlockMovement();
+        }
     }
 
     private void UpdateText(string _name, string _dialog)
