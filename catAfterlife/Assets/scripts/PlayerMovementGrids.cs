@@ -25,6 +25,8 @@ public class PlayerMovementGrids : MonoBehaviour
     public TileBase tile_left;
     public TileBase tile_right;
 
+    public bool ableToMove = true;
+
 
     private HashSet<Vector3Int> initiatedTilePos;
 
@@ -57,28 +59,31 @@ public class PlayerMovementGrids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Get input from the player (WASD or arrow keys)
-        // only takes in 1 direction at a time
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        // if user pressed both x and y
-        if (movement.x != 0 &  movement.y != 0)
+        if (ableToMove)
         {
-            // Prioritize horizontal movement
-            movement.y = 0;
-        }
-        
+            // Get input from the player (WASD or arrow keys)
+            // only takes in 1 direction at a time
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        if (!loadNextLevel)
-        {
-            string newText = "Remaining Steps: " + (totalSteps - currentStep);
-            stepsText.SetText(newText);
-        }
+            // if user pressed both x and y
+            if (movement.x != 0 & movement.y != 0)
+            {
+                // Prioritize horizontal movement
+                movement.y = 0;
+            }
 
-        if (totalSteps - currentStep <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+            if (!loadNextLevel)
+            {
+                string newText = "Remaining Steps: " + (totalSteps - currentStep);
+                stepsText.SetText(newText);
+            }
+
+            if (totalSteps - currentStep <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 
@@ -154,7 +159,7 @@ public class PlayerMovementGrids : MonoBehaviour
                 }
             }
 
-            UnityEngine.Debug.Log(countNewTile);
+            //UnityEngine.Debug.Log(countNewTile);
             if (countNewTile >= levelFinishTile && !loadNextLevel)
             {
                 StartCoroutine(DelayNextLevel(2));
@@ -182,7 +187,16 @@ public class PlayerMovementGrids : MonoBehaviour
         }
         return true;
     }
+
+    public void LockPlayer()
+    {
+        ableToMove = false;
+    }
     
+    public void UnlockPlayer()
+    {
+        ableToMove=true;
+    }
 
     /*
     private bool CanMove(Vector2 direction)
