@@ -8,11 +8,17 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
 
+    public Animator animator;
+
     private bool ableToMove = true;
 
     private void Start()
     {
         ableToMove = true;
+        if (animator ==  null)
+        {
+            animator = GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
@@ -21,6 +27,29 @@ public class PlayerMovement : MonoBehaviour
         // Get input from the player (WASD or arrow keys)
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        // if moving right
+        if (movement.x > 0)
+        {
+            animator.SetInteger("behavior", 4);
+        }
+        // if moving left
+        else if (movement.x < 0) 
+        {
+            animator.SetInteger("behavior", 3);
+        }
+        else if (movement.y > 0) 
+        {
+            animator.SetInteger("behavior", 1);
+        }
+        else if (movement.y < 0)
+        {
+            animator.SetInteger("behavior", 2);
+        }
+        else
+        {
+            animator.SetInteger("behavior", 0);
+        }
     }
 
     void FixedUpdate()

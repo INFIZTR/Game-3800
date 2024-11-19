@@ -12270,10 +12270,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6471376714232134590, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4145263100293003073, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18
@@ -12314,17 +12310,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7541653753603288427, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a3e64d4d342b9134c8b4ce5b71e52a48, type: 2}
     - target: {fileID: 7627968709398523605, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7627968709398523605, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
