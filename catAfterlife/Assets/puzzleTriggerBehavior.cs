@@ -19,7 +19,7 @@ public class puzzleTriggerBehavior : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Fkey.SetActive(true);
-            if (Input.GetKey("f") || Input.GetKey("F"))
+            if (Input.GetKey(KeyCode.F))
             {
                 var lm = levelManager.GetComponent<LevelManager>();
                 lm.LevelSwitch(directionIndicator);
