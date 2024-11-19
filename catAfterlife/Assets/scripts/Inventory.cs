@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,13 @@ public class Inventory : ScriptableObject
 
     void Start()
     {
-        Debug.Log(itemList.Count);
+        //Debug.Log(itemList.Count);
         InventoryManager.RefreshInventory();
+    }
+
+    private void Awake()
+    {
+        itemList.Clear();
     }
 
     private void OnDisable()
