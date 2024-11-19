@@ -148,3 +148,4 @@ MonoBehaviour:
   itemNumber: 1
   isPosion: 0
   inventory: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}
+  description: This is a flower.

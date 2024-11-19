@@ -12,7 +12,8 @@ public class CollectableItem : MonoBehaviour
     public bool isPosion;
     
     public Inventory inventory;
-
+    [TextArea]
+    public string description;
     public override bool Equals(object item)
     {
         if (item == null || !(item is CollectableItem))

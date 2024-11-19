@@ -46,7 +46,8 @@ public class InventoryManager : MonoBehaviour
             newSlot.slotImage.sprite = item.itemSprite;
             //Instantiate(newSlot.slotImage.sprite);
             newSlot.slotNumber.text = item.itemNumber.ToString();
-            //Debug.Log(item.itemSprite.ToString());
+            newSlot.description = item.description;
+            //Debug.Log(item.description);
 
         }
     }

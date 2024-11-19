@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class SlotManager : MonoBehaviour
+public class SlotManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
    public CollectableItem slotItem;
    public Image slotImage;
    public TMP_Text slotNumber;
    
-   //public PosionManager posionManager;
+   public string description;
    
+   //public PosionManager posionManager;
+
    public void ItemOnClickedL()
    {
       bool used = PosionManager.UseOneThing(slotItem);
@@ -30,5 +33,15 @@ public class SlotManager : MonoBehaviour
          PosionManager.ReturnOneThing(slotItem);
       }
    }
-   
+
+
+   public void OnPointerEnter(PointerEventData eventData)
+   {
+      PosionManager.text.text = description;
+   }
+
+   public void OnPointerExit(PointerEventData eventData)
+   {
+      PosionManager.text.text = "";
+   }
 }

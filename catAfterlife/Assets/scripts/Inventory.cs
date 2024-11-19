@@ -35,8 +35,8 @@ public class Inventory : ScriptableObject
 
         if (!itemList.Contains(thisItem))
         {
-            CollectableItem newItem = thisItem.Copy();
-            itemList.Add(newItem);
+            //CollectableItem newItem = thisItem.Copy();
+            itemList.Add(thisItem);
             //Debug.Log(itemList.Count);
 
         }

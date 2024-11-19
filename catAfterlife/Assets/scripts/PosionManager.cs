@@ -12,6 +12,8 @@ public class PosionManager : MonoBehaviour
     public SlotManager slot;
     public static int numOfIngradient = 0;
     private AudioSource aud;
+    
+    public static TMP_Text text;
 
     // play the background music
     private GameObject bgPlayer;
@@ -32,6 +34,11 @@ public class PosionManager : MonoBehaviour
         aud.Play();
         bgPlayer = GameObject.FindGameObjectWithTag("BackGroundMusic");
         bgPlayer.SetActive(false);
+        GameObject obj = GameObject.Find("Descriptions");
+        if (obj != null)
+        {
+            text = obj.GetComponent<TMP_Text>();
+        }
     }
 
     private void OnDisable()
@@ -51,6 +58,7 @@ public class PosionManager : MonoBehaviour
         newSlot.slotItem = item;
         newSlot.slotImage.sprite = item.itemSprite;
         newSlot.slotNumber.text = item.itemNumber.ToString();
+        newSlot.description = item.description;
     }
 
     public static void RefreshPosionList()
