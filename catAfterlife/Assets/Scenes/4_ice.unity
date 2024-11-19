@@ -1165,7 +1165,7 @@ MonoBehaviour:
   left: 1
   top: 8
   right: 3
-  bottom: 0
+  bottom: 1
   destroiableWalls: []
   blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 0}
