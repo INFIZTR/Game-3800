@@ -10,7 +10,7 @@ public class PosionManager : MonoBehaviour
     public Inventory inventory;
     public GameObject slotGtid;
     public SlotManager slot;
-
+    public static int numOfIngradient = 0;
     private AudioSource aud;
 
     // play the background music
@@ -68,11 +68,20 @@ public class PosionManager : MonoBehaviour
 
     public static bool UseOneThing(CollectableItem thisItem)
     {
-        return instance.inventory.UseOnce(thisItem);
+        if (numOfIngradient < 4)
+        {
+            numOfIngradient++;
+            return instance.inventory.UseOnce(thisItem);
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public static void ReturnOneThing(CollectableItem thisItem)
     {
+        numOfIngradient--;
         instance.inventory.ReturnUse(thisItem);
     }
 

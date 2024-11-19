@@ -22,9 +22,9 @@ public class SlotManager : MonoBehaviour
    }
    public void ItemOnClickedR()
    {
-      Debug.Log("ClickedR");
+      //Debug.Log("ClickedR");
       bool success = SelectedController.RemoveList(slotItem);
-      Debug.Log(success);
+      //Debug.Log(success);
       if (success)
       {
          PosionManager.ReturnOneThing(slotItem);
