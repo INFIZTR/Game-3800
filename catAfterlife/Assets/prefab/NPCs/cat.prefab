@@ -425,6 +425,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 26fef6dea9a9ac04ba751e5db5368b7d, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAssets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: cc0e42cd3d65f4443ad2b583bbb2b464, type: 3}
     - target: {fileID: 7991420843937816804, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: m_Name
       value: ImageCat

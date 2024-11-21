@@ -1,0 +1,12 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Cat	R	Hello again!	1
+#	1	Cat	R	Have you got the potion?	2
+#	2	Witch	L	What the... Who are you?	3
+#	3	Cat	R	My name is--	4
+#	4	Witch	L	"More importantly, how did you even get in here?"	5
+#	5	Cat	R	"Well, the window was open, and you were busy sleeping, so... I figured I would let myself in."	6
+#	6	Witch	L	"(Whoops, he is right. I remember wanting to let some fresh air in last night...)"	7
+#	7	Witch	L	" Anyway, I am afraid I am not really in the mood to fulfill requests today, so off you go."	8
+#	8	Cat	R	Requests? For what?	9
+#	9	Witch	L	"For my destiny-defying potion brews, of course. Is not that why you have come?"	10
+END	10				
