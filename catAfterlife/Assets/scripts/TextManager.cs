@@ -9,7 +9,15 @@ public class TextManager : MonoBehaviour
 {
     public int dialogIndex = 0;
     private string[] dialogRows;
-    public TextAsset textAsset;
+
+    // list of texts for npc
+    // index 0 for 1st encounter
+    // index 1 for second
+    // index 2 for third
+    public TextAsset[] textAssets;
+
+    // current text to be displayed
+    private TextAsset currentText;
     public Image spriteL;
     public Image spriteR;
 
@@ -37,7 +45,8 @@ public class TextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateText(textAsset);
+        currentText = textAssets[0];
+        GenerateText(currentText);
 
         if (player == null)
         {
@@ -45,8 +54,25 @@ public class TextManager : MonoBehaviour
         }
     }
 
+    // helper method to find if a certain item is inside player's inventory
+    private bool containsItem()
+    {
+        // todo:
+        return false;
+    }
     public void Awake()
     {
+        // check if player already acquired speacial item,
+        // if so display new button
+        if (containsItem())
+        {
+            // todo:
+        }
+
+        if (triggerCount < textAssets.Length)
+        {
+            currentText = textAssets[triggerCount];
+        }
 
         nameImageDict["Witch"] = sprites[0];
         //This is for the darker version of the opposite image
@@ -71,6 +97,9 @@ public class TextManager : MonoBehaviour
             var playerS = player.GetComponent<PlayerMovement>();
             playerS.UnlockMovement();
         }
+
+        // if the conversation is end, increment the counter
+        triggerCount++;
     }
 
     private void UpdateText(string _name, string _dialog)
@@ -161,7 +190,7 @@ public class TextManager : MonoBehaviour
         //if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F)) && isText)
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && isText)
         {
-            GenerateText(textAsset);
+            GenerateText(currentText);
         }
     }
 }
