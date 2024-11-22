@@ -7281,7 +7281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogIndex: 0
-  textAssets: []
+  textAsset_default: {fileID: 0}
   spriteL: {fileID: 532262282}
   spriteR: {fileID: 1566430631}
   nameText: {fileID: 1959035394}
@@ -7297,6 +7297,7 @@ MonoBehaviour:
   TalkingGUI: {fileID: 2081310227}
   InventoryGUI: {fileID: 850478415}
   player: {fileID: 0}
+  requiredItem: {fileID: 0}
 --- !u!114 &2081310230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9252,6 +9253,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 850478415}
     - target: {fileID: 5855503285538666182, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: requiredItem
+      value: 
+      objectReference: {fileID: 7341572330770411073, guid: 0d4af13f40e724b4fbfa2b695c13c325, type: 3}
+    - target: {fileID: 5855503285538666182, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 
       objectReference: {fileID: 1972614053}
@@ -9267,6 +9272,18 @@ PrefabInstance:
       propertyPath: sprites.Array.data[3]
       value: 
       objectReference: {fileID: 1663214693}
+    - target: {fileID: 8719275592229150381, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719275592229150381, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719275592229150381, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

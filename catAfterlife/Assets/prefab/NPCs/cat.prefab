@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 4497548420338957469}
-  CanvesGUI: {fileID: 4036769584678025414}
+  CanvesGUI: {fileID: 3508937059525398178}
   inventorySystemGUI: {fileID: 0}
 --- !u!61 &7556053964002054886
 BoxCollider2D:
@@ -426,6 +426,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 26fef6dea9a9ac04ba751e5db5368b7d, type: 3}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAsset_second
+      value: 
+      objectReference: {fileID: 4900000, guid: 4f74233828aed8f40a6baf874f637cca, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAsset_default
+      value: 
+      objectReference: {fileID: 4900000, guid: cc0e42cd3d65f4443ad2b583bbb2b464, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAsset_withItem
+      value: 
+      objectReference: {fileID: 4900000, guid: 112a8faa727104a4889a0c3dc33b2d19, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAssets.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -442,13 +454,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+--- !u!1 &3508937059525398178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1136540220469557566, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+  m_PrefabInstance: {fileID: 4573391012218484636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4010043799748790051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 635424760447627455, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
-  m_PrefabInstance: {fileID: 4573391012218484636}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4036769584678025414 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 536647889932947290, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
   m_PrefabInstance: {fileID: 4573391012218484636}
   m_PrefabAsset: {fileID: 0}

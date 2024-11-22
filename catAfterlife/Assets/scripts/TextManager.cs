@@ -11,10 +11,11 @@ public class TextManager : MonoBehaviour
     private string[] dialogRows;
 
     // list of texts for npc
-    // index 0 for 1st encounter
-    // index 1 for second
-    // index 2 for third
-    public TextAsset[] textAssets;
+    public TextAsset textAsset_default;
+    // load if the player is talking to the npc for the second time
+    public TextAsset textAsset_second;
+    // if the player got the item requested
+    public TextAsset textAsset_withItem;
 
     // current text to be displayed
     private TextAsset currentText;
@@ -38,6 +39,9 @@ public class TextManager : MonoBehaviour
 
     public GameObject player;
 
+    // npc required item
+    public CollectableItem requiredItem;
+
     // count how many times have the dialogue been invoked
     private int triggerCount = 0;
 
@@ -45,7 +49,8 @@ public class TextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentText = textAssets[0];
+
+        currentText = textAsset_default;
         GenerateText(currentText);
 
         if (player == null)
@@ -57,23 +62,13 @@ public class TextManager : MonoBehaviour
     // helper method to find if a certain item is inside player's inventory
     private bool containsItem()
     {
-        // todo:
-        return false;
+        var invs = InventoryGUI.GetComponent<InventoryManager>();
+       
+        return invs.inventory.itemList.Contains(requiredItem);
     }
     public void Awake()
     {
-        // check if player already acquired speacial item,
-        // if so display new button
-        if (containsItem())
-        {
-            // todo:
-        }
-
-        if (triggerCount < textAssets.Length)
-        {
-            currentText = textAssets[triggerCount];
-        }
-
+        triggerCount = 0;
         nameImageDict["Witch"] = sprites[0];
         //This is for the darker version of the opposite image
         nameImageDict["WitchOP"] = sprites[3];
@@ -84,9 +79,29 @@ public class TextManager : MonoBehaviour
 
     private void OnEnable()
     {
+        // check if player already acquired speacial item,
+        // if so display new button
+        if (containsItem())
+        {
+            currentText = textAsset_withItem;
+        }
+        // if this is the second time load text
+        else if (triggerCount > 0)
+        {
+            currentText = textAsset_second;
+        }
+        else
+        {
+            currentText = textAsset_default;
+        }
+
+        //Debug.Log(triggerCount);
+
         // lock player's movement
         var playerS = player.GetComponent<PlayerMovement>();
         playerS.LockMovement();
+
+      
     }
 
     private void OnDisable()
@@ -97,9 +112,6 @@ public class TextManager : MonoBehaviour
             var playerS = player.GetComponent<PlayerMovement>();
             playerS.UnlockMovement();
         }
-
-        // if the conversation is end, increment the counter
-        triggerCount++;
     }
 
     private void UpdateText(string _name, string _dialog)
@@ -154,6 +166,8 @@ public class TextManager : MonoBehaviour
             }
             else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
             {
+                // increment the counter
+                triggerCount++;
                 dialogIndex = 0;
                 Start();
                 TalkingGUI.SetActive(false);
@@ -170,7 +184,7 @@ public class TextManager : MonoBehaviour
         if (cells[0] == "&")
         {
             GameObject button = Instantiate(dialogButton,dialogButtonGroup);
-            button.GetComponentInChildren<TMP_Text>().text = cells[4];
+            button.GetComponentInChildren<TextMeshProUGUI>().text = cells[4];
             button.GetComponent<Button>().onClick.AddListener(delegate { OnButtonClick(int.Parse(cells[5]));});
             GenerateBotton(index+1);
         }
