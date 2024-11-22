@@ -52,13 +52,9 @@ public class TextManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        Debug.Log("invoke start");
-        // if is first time ever trigger start
-        if (triggerCount == 0)
-        {
-            currentText = textAsset_default;
-        }
+    {        
+        currentText = textAsset_default;
+        
         GenerateText(currentText);
 
         if (player == null)
@@ -89,7 +85,7 @@ public class TextManager : MonoBehaviour
     {
         // check if player already acquired speacial item,
         // if so display new button
-        if (containsItem())
+        if (containsItem() && !afterGivenItem)
         {
             currentText = textAsset_withItem;
         }
@@ -106,15 +102,14 @@ public class TextManager : MonoBehaviour
             currentText = textAsset_default;
         }
 
-        //Debug.Log(triggerCount);
 
         // lock player's movement
         var playerS = player.GetComponent<PlayerMovement>();
         playerS.LockMovement();
 
-        GenerateText(currentText);
         dialogIndex = 0;
-
+        GenerateText(currentText);
+        //Debug.Log(currentText.name);
     }
 
     private void OnDisable()
@@ -237,18 +232,17 @@ public class TextManager : MonoBehaviour
         triggerCount++;
         dialogIndex = 0;
         currentText = textAsset_afterItem;
-        //Start();
         TalkingGUI.SetActive(false);
-        //InventoryGUI.SetActive(true);
+        //Debug.Log(currentText.name);
 
         Invoke(nameof(Reload), 0.5f);
     }
 
     private void Reload() 
     {
-        //currentText = textAsset_afterItem;
+        //Debug.Log(currentText.name);
+
         TalkingGUI.SetActive(true);
-        //GenerateText(currentText);
     }
     private void OnButtonClick(int id)
     {
