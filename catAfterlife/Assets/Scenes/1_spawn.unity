@@ -7281,7 +7281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogIndex: 0
-  textAsset: {fileID: 4900000, guid: 4056328dccb9a2f4583a41e54f990481, type: 3}
+  textAssets: []
   spriteL: {fileID: 532262282}
   spriteR: {fileID: 1566430631}
   nameText: {fileID: 1959035394}
@@ -9201,6 +9201,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3074614952118257854, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166197695490244371, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697053913686051383, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697053913686051383, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697053913686051383, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697053913686051383, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697053913686051383, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697053913686051383, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5855503285538666182, guid: 499cea50442f73346a7ed4616d34aed9, type: 3}

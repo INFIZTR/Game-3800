@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAssets.Array.data[0]
       value: 
-      objectReference: {fileID: 4900000, guid: cc0e42cd3d65f4443ad2b583bbb2b464, type: 3}
+      objectReference: {fileID: 4900000, guid: 67ada9071bb12ff45a1c8cf5d09b754a, type: 3}
     - target: {fileID: 7991420843937816804, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: m_Name
       value: ImageCat

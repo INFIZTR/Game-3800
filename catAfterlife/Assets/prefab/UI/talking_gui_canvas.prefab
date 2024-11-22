@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogIndex: 0
-  textAsset: {fileID: 4900000, guid: 4056328dccb9a2f4583a41e54f990481, type: 3}
+  textAssets: []
   spriteL: {fileID: 1962977011506903005}
   spriteR: {fileID: 7897017465097745379}
   nameText: {fileID: 7248980048011993373}
@@ -420,7 +420,7 @@ MonoBehaviour:
   - {fileID: 7897017465097745379}
   - {fileID: 0}
   isText: 0
-  dialogButton: {fileID: 2594872091023181522, guid: 26d6aa44627c25048af5e8c89abd5489, type: 3}
+  dialogButton: {fileID: 1058768701960186064, guid: 31087b708b407a34ab40630a97da19ed, type: 3}
   dialogButtonGroup: {fileID: 2796262948172265950}
   TalkingGUI: {fileID: 1136540220469557566}
   InventoryGUI: {fileID: 0}
