@@ -7282,6 +7282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogIndex: 0
   textAsset_default: {fileID: 0}
+  textAsset_second: {fileID: 0}
+  textAsset_withItem: {fileID: 0}
   spriteL: {fileID: 532262282}
   spriteR: {fileID: 1566430631}
   nameText: {fileID: 1959035394}

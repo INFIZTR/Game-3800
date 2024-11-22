@@ -178,8 +178,10 @@ public class TextManager : MonoBehaviour
 
     private void GenerateBotton(int index)
     {
+        string[] cells = dialogRows[index].Split('\t');
+
         //string[] cells = dialogRows[index].Split(',');
-        string[] cells = dialogRows[index].Split(new[] { ' ', '\t' }, System.StringSplitOptions.RemoveEmptyEntries);
+        //string[] cells = dialogRows[index].Split(new[] { ' ', '\t' }, System.StringSplitOptions.RemoveEmptyEntries);
 
         if (cells[0] == "&")
         {
