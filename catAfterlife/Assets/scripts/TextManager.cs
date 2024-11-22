@@ -46,12 +46,19 @@ public class TextManager : MonoBehaviour
     // count how many times have the dialogue been invoked
     private int triggerCount = 0;
 
+    // after player handling the item to the npc
+    private bool afterGivenItem = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
-        currentText = textAsset_default;
+        Debug.Log("invoke start");
+        // if is first time ever trigger start
+        if (triggerCount == 0)
+        {
+            currentText = textAsset_default;
+        }
         GenerateText(currentText);
 
         if (player == null)
@@ -87,11 +94,14 @@ public class TextManager : MonoBehaviour
             currentText = textAsset_withItem;
         }
         // if this is the second time load text
-        else if (triggerCount > 0)
+        else if (triggerCount > 0 && !afterGivenItem)
         {
             currentText = textAsset_second;
         }
-        else
+        else if (afterGivenItem)
+        {
+            currentText = textAsset_afterItem;
+        } else
         {
             currentText = textAsset_default;
         }
@@ -102,7 +112,9 @@ public class TextManager : MonoBehaviour
         var playerS = player.GetComponent<PlayerMovement>();
         playerS.LockMovement();
 
-      
+        GenerateText(currentText);
+        dialogIndex = 0;
+
     }
 
     private void OnDisable()
@@ -170,7 +182,7 @@ public class TextManager : MonoBehaviour
                 // increment the counter
                 triggerCount++;
                 dialogIndex = 0;
-                Start();
+                //Start();
                 TalkingGUI.SetActive(false);
                 InventoryGUI.SetActive(true);
             }
@@ -192,9 +204,7 @@ public class TextManager : MonoBehaviour
             // if it is a handin potion button
             if (cells[cells.Length - 1].Contains("handinpotion"))
             {
-                Debug.Log("hihi");
-
-                button.GetComponent<Button>().onClick.AddListener(delegate { HandinPotion(); });
+                button.GetComponent<Button>().onClick.AddListener(delegate { HandinPotion(int.Parse(cells[5])); });
             }
             else
             {
@@ -207,18 +217,38 @@ public class TextManager : MonoBehaviour
     }
 
     // helper method that will remove the cat's required potion out of player's inventory
-    private void HandinPotion()
+    private void HandinPotion(int id)
     {
+        dialogIndex = id;
+        //PrintText();
+        for (int i = 0; i < dialogButtonGroup.childCount; i++)
+        {
+            Destroy(dialogButtonGroup.GetChild(i).gameObject);
+        }
 
         /*
         var invs = InventoryGUI.GetComponent<InventoryManager>();
         invs.inventory.RemovePotion(requiredItem);
         */
-
         // load another text box
-        currentText = textAsset_afterItem;
+        afterGivenItem = true;
+
+        // increment the counter
+        triggerCount++;
         dialogIndex = 0;
-        Start();
+        currentText = textAsset_afterItem;
+        //Start();
+        TalkingGUI.SetActive(false);
+        //InventoryGUI.SetActive(true);
+
+        Invoke(nameof(Reload), 0.5f);
+    }
+
+    private void Reload() 
+    {
+        //currentText = textAsset_afterItem;
+        TalkingGUI.SetActive(true);
+        //GenerateText(currentText);
     }
     private void OnButtonClick(int id)
     {
