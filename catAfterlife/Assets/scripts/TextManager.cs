@@ -16,6 +16,7 @@ public class TextManager : MonoBehaviour
     public TextAsset textAsset_second;
     // if the player got the item requested
     public TextAsset textAsset_withItem;
+    public TextAsset textAsset_afterItem;
 
     // current text to be displayed
     private TextAsset currentText;
@@ -187,11 +188,38 @@ public class TextManager : MonoBehaviour
         {
             GameObject button = Instantiate(dialogButton,dialogButtonGroup);
             button.GetComponentInChildren<TextMeshProUGUI>().text = cells[4];
-            button.GetComponent<Button>().onClick.AddListener(delegate { OnButtonClick(int.Parse(cells[5]));});
+
+            // if it is a handin potion button
+            if (cells[cells.Length - 1].Contains("handinpotion"))
+            {
+                Debug.Log("hihi");
+
+                button.GetComponent<Button>().onClick.AddListener(delegate { HandinPotion(); });
+            }
+            else
+            {
+                button.GetComponent<Button>().onClick.AddListener(delegate { OnButtonClick(int.Parse(cells[5])); });
+            }
+
+            //button.GetComponent<Button>().onClick.AddListener(delegate { OnButtonClick(int.Parse(cells[5]));});
             GenerateBotton(index+1);
         }
     }
 
+    // helper method that will remove the cat's required potion out of player's inventory
+    private void HandinPotion()
+    {
+
+        /*
+        var invs = InventoryGUI.GetComponent<InventoryManager>();
+        invs.inventory.RemovePotion(requiredItem);
+        */
+
+        // load another text box
+        currentText = textAsset_afterItem;
+        dialogIndex = 0;
+        Start();
+    }
     private void OnButtonClick(int id)
     {
         dialogIndex = id;

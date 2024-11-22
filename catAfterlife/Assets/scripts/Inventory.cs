@@ -55,6 +55,13 @@ public class Inventory : ScriptableObject
         InventoryManager.RefreshInventory();
     }
 
+    // go through the list and remove given item
+    public void RemovePotion(CollectableItem that)
+    {
+        // todo::
+    }
+
+
     public bool UseOnce(CollectableItem thisItem)
     {
         used = false;

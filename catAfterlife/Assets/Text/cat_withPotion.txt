@@ -1,6 +1,6 @@
 Tag	ID	Name	Position	Text	JumpTo
 #	0	Cat	R	Hello again!	1
 #	1	Cat	R	Have you got the potion?	2
-&	2	Cat	R	Not Yet	4
+&	2	Cat	R	Not Yet	4	handinpotion
 &	3	Cat	R	here it is!	4
 END	4
