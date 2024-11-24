@@ -769,7 +769,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -13
   m_Sprite: {fileID: 21300000, guid: 65b4d3c332b66b347b663841097842d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -68675,7 +68675,7 @@ Transform:
   m_GameObject: {fileID: 8711563902795758326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.18, y: 2.17, z: 0}
+  m_LocalPosition: {x: -7.84, y: -5.82, z: 0}
   m_LocalScale: {x: 0.8095064, y: 0.8095064, z: 0.8095064}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -68925,7 +68925,7 @@ MonoBehaviour:
   tile_left: {fileID: 11400000, guid: 72c94f57b80c9d84a96a35b56c58988a, type: 2}
   tile_right: {fileID: 11400000, guid: be8263793c0024f489bacdc623743d05, type: 2}
   ableToMove: 1
-  levelFinishTile: 46
+  levelFinishTile: 34
   puzzleManager: {fileID: 478335828}
   GameOver: {fileID: 1705135221}
   totalSteps: 14

@@ -159,6 +159,7 @@ public class PlayerMovementGrids : MonoBehaviour
                 }
             }
 
+            UnityEngine.Debug.Log(countNewTile);
             //UnityEngine.Debug.Log(countNewTile);
             if (countNewTile >= levelFinishTile && !loadNextLevel)
             {
