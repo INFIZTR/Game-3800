@@ -9,12 +9,18 @@ Tag	ID	Name	Position	Text	JumpTo
 #	7	Gem	R	Not just any potion. I need something that can bridge my existence to the world beyond.	8
 #	8	Gem	R	A potion that can dissolve the barriers keeping me anchored here	9
 #	9	Gem	R	Can you do that for me?	10
-#	10	Witch	L	A potion to free you from limbo? That is not a simple request. I would need ingredients, rare ones. And I am not sure if such a potion even exists.	11
-#	11	Gem	R	The potion exists, but the knowledge is scattered, hidden in the memories of this place. I have been here long enough to gather fragments of it.I know what you will need. You must collect the ingredients of the potion, and by combining these, you will have what you need to make the potion.	12
-#	12	Witch	L	That sounds like quite a bit of a challenge. Those tasks are arduous. Why should I do this at all?	13
-#	13	Gem	R	Because, witch, I can offer you something in return. I am connected to the very foundation of this realm. I know what you should be after. Help me, and I will help you. I can show you the way. But only if you help me first.	14
-#	14	Witch	L	So, you are offering me knowledge in exchange for your freedom? It seems like a fair trade. But I will need time to do it.	15
-#	15	Gem	R	Time is something I do not miss. I can wait, as I always have. But do not delay too long, Witch. The longer I remain here, the more I feel the… Loneliness and displeasure. Return when the potion is ready. Then, we will both be free.	16
-#	16	Witch	L	I will find the ingredients. But remember, once I brew this potion,you had better keep your promise. I need the answers to my life… Um… Whatever I am, and I need you to tell me about this place when I am done with the potion.	17
-#	17	Gem	R	My word binds me. Go, now. And return only when the potion is complete… Until then.	18
-END	18		
+#	10	Witch	L	A potion to free you from limbo? That is not a simple request. I would need ingredients, rare ones.	11
+#	11	Witch	L	And I am not sure if such a potion even exists.	12
+#	12	Gem	R	The potion exists, but the knowledge is scattered, hidden in the memories of this place.	13
+#	13	Gem	R	have been here long enough to gather fragments of it.I know what you will need.	14
+#	14	Gem	R	You must collect the ingredients of the potion, and by combining these, you will have what you need to make the potion.	15
+#	15	Witch	L	That sounds like quite a bit of a challenge. Those tasks are arduous. Why should I do this at all?	16
+#	16	Gem	R	Because, witch, I can offer you something in return. I am connected to the very foundation of this realm.	17
+#	17	Gem	R	I know what you should be after. Help me, and I will help you. I can show you the way. But only if you help me first.	18
+#	18	Witch	L	So, you are offering me knowledge in exchange for your freedom? It seems like a fair trade. But I will need time to do it.	19
+#	19	Gem	R	Time is something I do not miss. I can wait, as I always have. But do not delay too long, Witch.	20
+#	20	Gem	R	The longer I remain here, the more I feel the… Loneliness and displeasure. Return when the potion is ready. Then, we will both be free.	21
+#	21	Witch	L	I will find the ingredients. But remember, once I brew this potion,you had better keep your promise.	22
+#	22	Witch	L	I need the answers to my life… Um… Whatever I am, and I need you to tell me about this place when I am done with the potion.	23
+#	23	Gem	R	My word binds me. Go, now. And return only when the potion is complete… Until then.	24
+END	24		
