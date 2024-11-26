@@ -596,6 +596,9 @@ MonoBehaviour:
   destroiableWalls: []
   blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 0}
+  instantiateObjects: 0
+  instantiate_Pickup_Position: []
+  list_pickups: []
 --- !u!1001 &289467516
 PrefabInstance:
   m_ObjectHideFlags: 0
