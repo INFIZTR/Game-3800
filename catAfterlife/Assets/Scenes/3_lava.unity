@@ -514,6 +514,7 @@ MonoBehaviour:
   destroiableWalls: []
   blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 0}
+  instantiateObjects: 1
   instantiate_Pickup_Position:
   - {fileID: 695234442}
   - {fileID: 453112178}
@@ -4878,6 +4879,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4494577519993534369, guid: 809574cbc6d83c949a0dcb7c907c9c90, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 32e22bd9acd0ccb419a70bc54d73996d, type: 2}
     - target: {fileID: 6156804565608938950, guid: 809574cbc6d83c949a0dcb7c907c9c90, type: 3}
       propertyPath: m_Name
       value: steamVent

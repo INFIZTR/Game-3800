@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b07420ccadd4ab459d57f36f12a1aef
+guid: ad6544cc392c71648b07fd91a138baac
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vent_1
+      name: waterfall_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60a614e41cbee8746be55f81cf1a88c3
-      internalID: -1652490867
+      spriteID: 2bef552e3c2e22340a645f447bf3665f
+      internalID: -234649050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vent_2
+      name: waterfall_1
       rect:
         serializedVersion: 2
         x: 2000
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b69f0f7244bc982479826d6968a167fe
-      internalID: -1335567906
+      spriteID: add9c1579e7379d4daa9608067c84432
+      internalID: 50871580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vent_3
+      name: waterfall_2
       rect:
         serializedVersion: 2
         x: 4000
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 674ddf2f03fe616409f0fac1a85cc0dc
-      internalID: -480808412
+      spriteID: 645fd75350edcc444aff08ffbece63e5
+      internalID: 1382490948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vent_4
+      name: waterfall_3
       rect:
         serializedVersion: 2
         x: 6000
@@ -200,92 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9eef190c2f5c634cb8806df09f13dd2
-      internalID: -74828798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vent_5
-      rect:
-        serializedVersion: 2
-        x: 8000
-        y: 0
-        width: 2000
-        height: 2000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb1a3b2da05600641805de76c72a08cf
-      internalID: -1271515931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vent_6
-      rect:
-        serializedVersion: 2
-        x: 10000
-        y: 0
-        width: 2000
-        height: 2000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfbfac39a0123e74ebd3e2a05f87a510
-      internalID: 174963205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vent_7
-      rect:
-        serializedVersion: 2
-        x: 12000
-        y: 0
-        width: 2000
-        height: 2000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05182154c24dcd64f89df1c9bff2e953
-      internalID: -2088869412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: vent_8
-      rect:
-        serializedVersion: 2
-        x: 14000
-        y: 0
-        width: 2000
-        height: 2000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e670e8c0423030c47ad9d12662aed857
-      internalID: 1587352943
+      spriteID: dfe199b8d42277148b6207dafb8f8772
+      internalID: 1650459699
       vertices: []
       indices: 
       edges: []
@@ -301,14 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      vent_1: -1652490867
-      vent_2: -1335567906
-      vent_3: -480808412
-      vent_4: -74828798
-      vent_5: -1271515931
-      vent_6: 174963205
-      vent_7: -2088869412
-      vent_8: 1587352943
+      waterfall_0: -234649050
+      waterfall_1: 50871580
+      waterfall_2: 1382490948
+      waterfall_3: 1650459699
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
