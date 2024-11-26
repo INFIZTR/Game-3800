@@ -12,6 +12,9 @@ public class LevelManager : MonoBehaviour
     public int right = 0;
     public int bottom = 0;
 
+    // shares loadingScreen across scenes temporarily
+    //public static GameObject loadingScreen;
+
     // determine if display reward panel at start of the scene
     public static bool displayRewardPanel = false;
     public static bool doDestoryWall = false;

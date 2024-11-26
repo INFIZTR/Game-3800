@@ -371,9 +371,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: requiredItem
+      value: 
+      objectReference: {fileID: 7341572330770411073, guid: 15ffe5b039910ef40a728d9d56880132, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAsset_second
+      value: 
+      objectReference: {fileID: 4900000, guid: 4f74233828aed8f40a6baf874f637cca, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_default
       value: 
       objectReference: {fileID: 4900000, guid: 4056328dccb9a2f4583a41e54f990481, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAsset_withItem
+      value: 
+      objectReference: {fileID: 4900000, guid: 112a8faa727104a4889a0c3dc33b2d19, type: 3}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: textAsset_afterItem
+      value: 
+      objectReference: {fileID: 4900000, guid: 45bf0ac9e23e5a74d9ac171939e48456, type: 3}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAssets.Array.size
       value: 1
