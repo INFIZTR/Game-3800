@@ -459,6 +459,7 @@ MonoBehaviour:
   top: 2
   right: 3
   bottom: 4
+  loadingScreen: {fileID: 0}
   destroiableWalls: []
   blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 0}
@@ -929,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 4
-  loadRewardPanel: 0
+  loadRewardPanel: 1
   destroyWall: 0
 --- !u!1 &608997619
 GameObject:
