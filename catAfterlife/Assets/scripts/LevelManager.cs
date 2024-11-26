@@ -12,8 +12,8 @@ public class LevelManager : MonoBehaviour
     public int right = 0;
     public int bottom = 0;
 
-    // shares loadingScreen across scenes temporarily
-    //public static GameObject loadingScreen;
+    // screen to display when loading next scene
+    public GameObject loadingScreen;
 
     // determine if display reward panel at start of the scene
     public static bool displayRewardPanel = false;
@@ -181,19 +181,35 @@ public class LevelManager : MonoBehaviour
         {
             // case 0 represent top
             case 0:
-                SceneManager.LoadScene(top);
+                StartCoroutine(LoadNextScene(top));
                 break;
             // case 1 represent left
             case 1:
-                SceneManager.LoadScene(left);
+                StartCoroutine(LoadNextScene(left));
                 break;
             // case 2 represent bottom
             case 2:
-                SceneManager.LoadScene(bottom);
+                StartCoroutine(LoadNextScene(bottom));
                 break;
             case 3:
-                SceneManager.LoadScene(right);
+                StartCoroutine(LoadNextScene(right));
                 break;
+        }
+    }
+
+    private IEnumerator LoadNextScene(int nextSceneIndex)
+    {
+        loadingScreen.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        // load the next scene asynchronously
+        UnityEngine.AsyncOperation operation = SceneManager.LoadSceneAsync(nextSceneIndex);
+
+        // wait until the scene has fully loaded
+        while (!operation.isDone)
+        {
+            yield return null;
         }
     }
 
