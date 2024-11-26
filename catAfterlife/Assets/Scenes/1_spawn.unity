@@ -1021,6 +1021,7 @@ MonoBehaviour:
   - {fileID: 799585677}
   blockDestroyedText: {fileID: 1180389831}
   rewardPanel: {fileID: 1127532410621790874}
+  instantiateObjects: 1
   instantiate_Pickup_Position:
   - {fileID: 520924397}
   - {fileID: 1030808914}
@@ -11162,18 +11163,6 @@ PrefabInstance:
       value: Potion_brew_trigger
       objectReference: {fileID: 0}
     - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.44961324
-      objectReference: {fileID: 0}
-    - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.44961324
-      objectReference: {fileID: 0}
-    - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.44961324
-      objectReference: {fileID: 0}
-    - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.17
       objectReference: {fileID: 0}
@@ -11187,7 +11176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -11199,7 +11188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11211,10 +11200,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1646702133768940452, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076513088540437867, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5394729697712899131, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
@@ -11225,10 +11210,6 @@ PrefabInstance:
       propertyPath: inventorySystemGUI
       value: 
       objectReference: {fileID: 850478415}
-    - target: {fileID: 6577056446200208033, guid: d6e8196a3c6e8ea46a49cebf883c2ee2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
