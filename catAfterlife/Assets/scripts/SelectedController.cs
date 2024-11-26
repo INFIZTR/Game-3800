@@ -90,7 +90,7 @@ public class SelectedController : MonoBehaviour
         {
             bool isPosion = true;
             string[] cells = recipeRows[i].Split('\t');
-            for (int j = 0; j < 3; j++) {
+            for (int j = 0; j < 4; j++) {
                 if (!(instance.SelectList[j].itemName == cells[j]))
                 {
                     isPosion = false;
