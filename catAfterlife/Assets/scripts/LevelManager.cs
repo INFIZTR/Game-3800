@@ -20,10 +20,26 @@ public class LevelManager : MonoBehaviour
 
     public GameObject rewardPanel;
 
+    [Tooltip("list of positions to instantiate pickups")]
+    public GameObject[] instantiate_Pickup_Position;
+
+    public GameObject[] list_pickups;
+
     public static bool invokeSceneForFirstTime = true;
 
     private void Start()
     {
+        // instantiate pickups if it is first time open the scene
+        if (invokeSceneForFirstTime)
+        {
+            int positionIndex = 0;
+            foreach (GameObject it in list_pickups)
+            {
+                Instantiate(it, instantiate_Pickup_Position[positionIndex].transform);
+                positionIndex++;
+            }
+        }
+
         if (invokeSceneForFirstTime && blockDestroyedText != null)
         {
             blockDestroyedText.SetActive(false);
@@ -36,8 +52,9 @@ public class LevelManager : MonoBehaviour
                 wall.SetActive(true);
             }
 
-            invokeSceneForFirstTime =false;
         }
+
+        invokeSceneForFirstTime = false;
     }
 
     private void Awake()
@@ -54,8 +71,6 @@ public class LevelManager : MonoBehaviour
                 // display reward panel
                 rewardPanel.SetActive(true);
                 displayRewardPanel = false;
-
-                
             }
             else
             {

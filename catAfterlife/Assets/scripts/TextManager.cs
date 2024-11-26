@@ -235,7 +235,7 @@ public class TextManager : MonoBehaviour
         TalkingGUI.SetActive(false);
         //Debug.Log(currentText.name);
 
-        Invoke(nameof(Reload), 0.5f);
+        Invoke(nameof(Reload), 0.3f);
     }
 
     private void Reload() 

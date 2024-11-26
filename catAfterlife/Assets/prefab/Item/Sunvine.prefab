@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -494790180567718067}
   - component: {fileID: 7341572330770411073}
   m_Layer: 0
-  m_Name: testItem
+  m_Name: Sunvine
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5820c12262b1c074aa2829483b57cae3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d8bf3b305a14c44c9d0a68de703235b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.5, y: 12.5}
+    oldSize: {x: 20, y: 20}
     newSize: {x: 4.58, y: 5.45}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b739a6a4311794bb41439ccc53b3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: test item
-  itemSprite: {fileID: 21300000, guid: 5820c12262b1c074aa2829483b57cae3, type: 3}
+  itemName: sunvine
+  itemSprite: {fileID: 21300000, guid: 3d8bf3b305a14c44c9d0a68de703235b, type: 3}
   itemNumber: 1
   isPosion: 0
   inventory: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}
-  description: This is a flower.
+  description: This is Sunvine.

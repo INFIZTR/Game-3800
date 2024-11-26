@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 5608767160395047640}
   - component: {fileID: 1675199945837177406}
   m_Layer: 0
-  m_Name: Posion
+  m_Name: potion_brew_trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

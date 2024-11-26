@@ -21,7 +21,7 @@ public class DemoBehavior : MonoBehaviour
             ps.LockPlayer();
 
             // Start the coroutine to hide the object after 4 seconds
-            StartCoroutine(SetInactiveAfterDelay(4f));
+            StartCoroutine(SetInactiveAfterDelay(2f));
         }
     }
 
