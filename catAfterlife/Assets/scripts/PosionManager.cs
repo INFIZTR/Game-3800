@@ -76,9 +76,10 @@ public class PosionManager : MonoBehaviour
 
     public static bool UseOneThing(CollectableItem thisItem)
     {
-        if (numOfIngradient < 4)
+        if (numOfIngradient < 4 && thisItem.itemNumber > 0)
         {
             numOfIngradient++;
+            Debug.Log("numOfIngradient: " + numOfIngradient);
             return instance.inventory.UseOnce(thisItem);
         }
         else
@@ -90,6 +91,7 @@ public class PosionManager : MonoBehaviour
     public static void ReturnOneThing(CollectableItem thisItem)
     {
         numOfIngradient--;
+        Debug.Log("numOfIngradient: " + numOfIngradient);
         instance.inventory.ReturnUse(thisItem);
     }
 

@@ -62,10 +62,10 @@ public class SelectedController : MonoBehaviour
     {
         if (instance.SelectList.Count > 0)
         {
-            Debug.Log(instance.SelectList.Count);
+            //Debug.Log(instance.SelectList.Count);
             bool success = instance.SelectList.Remove(thisItem);
-            Debug.Log(success);
-            Debug.Log(instance.SelectList.Count);
+            //Debug.Log(success);
+            //Debug.Log(instance.SelectList.Count);
             RefreshList();
             return true;
         }
