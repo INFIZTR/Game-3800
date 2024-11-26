@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 9085740536829680612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.53, y: -0.5863385, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,3 +148,4 @@ MonoBehaviour:
   itemNumber: 2
   isPosion: 0
   inventory: {fileID: 11400000, guid: fa6e532486c114a49b2a23bcb35b86cf, type: 2}
+  description: This is Lavagrapes.
