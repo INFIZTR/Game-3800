@@ -6,6 +6,7 @@ public class DemoBehavior : MonoBehaviour
 {
     public bool display = false;
     public GameObject player;
+    public float activeTime = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class DemoBehavior : MonoBehaviour
             ps.LockPlayer();
 
             // Start the coroutine to hide the object after 4 seconds
-            StartCoroutine(SetInactiveAfterDelay(2f));
+            StartCoroutine(SetInactiveAfterDelay(activeTime));
         }
     }
 

@@ -1,0 +1,9 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Turtle	R	Ah, this potion smells of your wits and your kindness. Well done, young one	1
+#	1	Turtle	R	My shell feels lighter already! It’s been a burden for far too long.	2
+#	2	Turtle	R	Thank you for this. The filth was more persistent than memories of my past.	3
+#	3	Turtle	R	With your skill, perhaps you’ll leave Limbo better than you found it.	4
+#	4	Turtle	R	It truly is curious how a simple concoction can ease such persistent burdens, you did well indeed.	5
+#	5	Turtle	R	This potion… feels like hope brewed into liquid form.	6
+#	6	Turtle	R	May your journey be as soothing to others as this potion is to me.	7
+END	7				

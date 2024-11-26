@@ -271,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   display: 1
   player: {fileID: 0}
+  activeTime: 0.8
 --- !u!1 &4206509450973323589
 GameObject:
   m_ObjectHideFlags: 0

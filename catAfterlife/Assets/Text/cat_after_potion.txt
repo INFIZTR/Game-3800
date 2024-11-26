@@ -1,0 +1,12 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Cat	R	Hmm… I can feel the warmth in this potion.	1
+#	1	Cat	R	This scent… it reminds me of the sun I used to nap under. Thank you.	2
+#	2	Cat	R	I never thought I'd crave something beyond this, yet here I am, yearning for more…	3
+#	3	Cat	R	With this, maybe I’ll finally find the answer to what’s been missing all along.	4
+#	4	Cat	R	You have always been kind to me, Witch. This potion feels like you, all warm and gentle for me.	5
+#	5	Cat	R	Perhaps this will guide me to my next step.	6
+#	6	Cat	R	I am still unsure if I am ready for what’s next, but this… this feels right.	7
+#	7	Cat	R	Do you think the next life will have someone like you?	8
+#	8	Cat	R	For a witch, you have a knack for giving comfort to a lonely soul.	9
+#	9	Cat	R	Let’s see where this takes me… Maybe, no, I think this time I will be able to find the answers, all thanks to you.	10
+END	10				

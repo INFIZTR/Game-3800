@@ -1,0 +1,11 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Gemrock	R	Oh? Is this for me? How intriguing!	1
+#	1	Gemrock	R	This potion sparkles, almost as much as I do! You’ve outdone yourself.	2
+#	2	Gemrock	R	What is this? A gift to soothe my ancient stones?	3
+#	3	Gemrock	R	It is not often I receive something so thoughtful.	4
+#	4	Gemrock	R	Ah, this is delightful. You’ve shown me yet another wonder of this world.	5
+#	5	Gemrock	R	Every drop seems to hum with the secrets of this realm. Curious, you did work hard to get it…	6
+#	6	Gemrock	R	Giving me this is far more than giving me a potion—you have given me a reason to ponder.	7
+#	7	Gemrock	R	Perhaps with this, I will find the strength to move, even for a short while.	8
+#	8	Gemrock	R	You are quite something, I will give you that. Do continue bringing life to this still world.	9
+END	9				

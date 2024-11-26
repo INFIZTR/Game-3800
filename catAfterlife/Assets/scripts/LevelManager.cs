@@ -35,7 +35,8 @@ public class LevelManager : MonoBehaviour
             int positionIndex = 0;
             foreach (GameObject it in list_pickups)
             {
-                Instantiate(it, instantiate_Pickup_Position[positionIndex].transform);
+                GameObject temp = Instantiate(it, instantiate_Pickup_Position[positionIndex].transform);
+                DontDestroyOnLoad(temp);
                 positionIndex++;
             }
         }
