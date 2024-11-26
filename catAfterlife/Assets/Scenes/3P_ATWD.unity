@@ -790,8 +790,8 @@ Transform:
   m_GameObject: {fileID: 599771077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -1.4, z: 0}
-  m_LocalScale: {x: 1.7302223, y: 1.7302223, z: 1.7302223}
+  m_LocalPosition: {x: 0.5752, y: -1.5734, z: 0}
+  m_LocalScale: {x: 1.8153328, y: 1.7510005, z: 1.7302223}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -68032,6 +68032,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1688506124372724244, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0283c6456aba8454b88f1e2f5fa3b390, type: 2}
+    - target: {fileID: 1688506124372724244, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 413656081158911028, guid: 0283c6456aba8454b88f1e2f5fa3b390, type: 2}
+    - target: {fileID: 1688506124372724244, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2654240527169551028, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_Name
       value: Puzzle_UI
