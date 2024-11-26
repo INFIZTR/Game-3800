@@ -5,12 +5,7 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
     public GameObject CanvesGUI;
-    bool firstTime;
-    // Start is called before the first frame update
-    void Start()
-    {
-        firstTime = true;
-    }
+    bool firstTime = true;
 
     // Update is called once per frame
     void Update()
