@@ -6,6 +6,7 @@ using UnityEngine;
 public class RewardPanel : MonoBehaviour
 {
     public GameObject blockDestroyedText;
+    public bool alreadyInvoked = false;
 
     public void Hide()
     {
@@ -14,5 +15,8 @@ public class RewardPanel : MonoBehaviour
         {
             blockDestroyedText.SetActive(true);
         }
+
+        // the player can only collect rare item for 1 time
+        alreadyInvoked = true;
     }
 }

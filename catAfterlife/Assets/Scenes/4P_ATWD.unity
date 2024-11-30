@@ -466,6 +466,7 @@ MonoBehaviour:
   top: 2
   right: 3
   bottom: 4
+  loadingScreen: {fileID: 0}
   destroiableWalls: []
   blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 0}
@@ -936,6 +937,7 @@ MonoBehaviour:
   nextLevel: 3
   loadRewardPanel: 1
   destroyWall: 0
+  loadingScreen: {fileID: 0}
 --- !u!1 &538096774
 GameObject:
   m_ObjectHideFlags: 0
@@ -159995,6 +159997,14 @@ PrefabInstance:
     - target: {fileID: 2654240527169551028, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_Name
       value: Puzzle_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321805044003813186, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 478335830}
+    - target: {fileID: 3321805044003813186, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadPreviousLevel
       objectReference: {fileID: 0}
     - target: {fileID: 7948267380041460078, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_Pivot.x

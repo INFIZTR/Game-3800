@@ -148,9 +148,17 @@ public class LevelManager : MonoBehaviour
         {
             if (displayRewardPanel)
             {
-                // display reward panel
-                rewardPanel.SetActive(true);
-                displayRewardPanel = false;
+                var rp = rewardPanel.GetComponent<RewardPanel>();
+                if (rp != null)
+                {
+                    if (!rp.alreadyInvoked)
+                    {
+                        // display reward panel
+                        rewardPanel.SetActive(true);
+                        displayRewardPanel = false;
+                    }
+                }
+
             }
             else
             {

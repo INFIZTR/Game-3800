@@ -937,6 +937,7 @@ MonoBehaviour:
   nextLevel: 3
   loadRewardPanel: 1
   destroyWall: 0
+  loadingScreen: {fileID: 0}
 --- !u!1 &538096774
 GameObject:
   m_ObjectHideFlags: 0
@@ -63297,7 +63298,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.23645836, y: 0.23645836, z: 0}
+  m_ChunkCullingBounds: {x: 0.58769226, y: 0.58769226, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -64611,6 +64612,14 @@ PrefabInstance:
     - target: {fileID: 2654240527169551028, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321805044003813186, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 478335830}
+    - target: {fileID: 3321805044003813186, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadPreviousLevel
       objectReference: {fileID: 0}
     - target: {fileID: 7948267380041460078, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_Pivot.x

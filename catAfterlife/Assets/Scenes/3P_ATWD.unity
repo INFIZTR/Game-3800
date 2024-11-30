@@ -473,6 +473,11 @@ MonoBehaviour:
   instantiateObjects: 0
   instantiate_Pickup_Position: []
   list_pickups: []
+--- !u!1 &230868885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4479183630119554982, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+  m_PrefabInstance: {fileID: 1705135219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &289467516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -722,6 +727,7 @@ MonoBehaviour:
   nextLevel: 1
   loadRewardPanel: 1
   destroyWall: 1
+  loadingScreen: {fileID: 230868885}
 --- !u!1 &599771077
 GameObject:
   m_ObjectHideFlags: 0
@@ -84813,22 +84819,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1688506124372724244, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 0283c6456aba8454b88f1e2f5fa3b390, type: 2}
-    - target: {fileID: 1688506124372724244, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 413656081158911028, guid: 0283c6456aba8454b88f1e2f5fa3b390, type: 2}
-    - target: {fileID: 1688506124372724244, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2654240527169551028, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_Name
       value: Puzzle_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3321805044003813186, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 478335830}
     - target: {fileID: 7948267380041460078, guid: d9e5bc82ee1e65a4fb7b8d2a95e3d2b2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
