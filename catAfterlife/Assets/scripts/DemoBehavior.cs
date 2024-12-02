@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DemoBehavior : MonoBehaviour
 {
     public bool display = false;
     public GameObject player;
-    public float activeTime = 1f;
+    float activeTime = 1.5f;
+    bool invoked = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,14 +18,25 @@ public class DemoBehavior : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-        if (display)
-        {
-            gameObject.SetActive(true);
-            var ps = player.GetComponent<PlayerMovementGrids>();
-            ps.LockPlayer();
+       
+    }
 
-            // Start the coroutine to hide the object after 4 seconds
-            StartCoroutine(SetInactiveAfterDelay(activeTime));
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().isLoaded)
+        {
+            if (display && !invoked)
+            {
+                invoked = true;
+                gameObject.SetActive(true);
+                var ps = player.GetComponent<PlayerMovementGrids>();
+                ps.LockPlayer();
+
+                // Start the coroutine to wait for the scene to load and then count down
+                Debug.Log(activeTime);
+
+                StartCoroutine(WaitForSceneAndSetInactive(activeTime));
+            }
         }
     }
 
@@ -33,9 +47,10 @@ public class DemoBehavior : MonoBehaviour
         ps.UnlockPlayer();
     }
 
-    private IEnumerator SetInactiveAfterDelay(float delay)
+    private IEnumerator WaitForSceneAndSetInactive(float delay)
     {
-        // Wait for the specified time
+
+        // Now start the countdown
         yield return new WaitForSeconds(delay);
 
         // Set the object inactive and unlock the player

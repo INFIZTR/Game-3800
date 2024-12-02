@@ -1719,7 +1719,7 @@ PrefabInstance:
     - target: {fileID: 728058079476196029, guid: 516b01aa38bae5448b3ccf465c92077d, type: 3}
       propertyPath: inventorySystemGUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 770524302}
     - target: {fileID: 763808409752647145, guid: 516b01aa38bae5448b3ccf465c92077d, type: 3}
       propertyPath: player
       value: 
@@ -1727,7 +1727,7 @@ PrefabInstance:
     - target: {fileID: 763808409752647145, guid: 516b01aa38bae5448b3ccf465c92077d, type: 3}
       propertyPath: InventoryGUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 770524302}
     - target: {fileID: 2317029171665432913, guid: 516b01aa38bae5448b3ccf465c92077d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2835756
@@ -2141,6 +2141,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770168818}
   m_CullTransparentMesh: 1
+--- !u!1 &770524302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022741823732057348, guid: 33203898840649f419bcaf5d70b5569b, type: 3}
+  m_PrefabInstance: {fileID: 1859419629}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &812419919
 GameObject:
   m_ObjectHideFlags: 0
