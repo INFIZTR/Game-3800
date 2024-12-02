@@ -90,10 +90,13 @@ public class SelectedController : MonoBehaviour
         {
             bool isPosion = true;
             string[] cells = recipeRows[i].Split('\t');
-            for (int j = 0; j < 4; j++) {
-                if (!(instance.SelectList[j].itemName == cells[j]))
-                {
-                    isPosion = false;
+            //if (cells.Length == 4)
+            {
+                for (int j = 0; j < 4; j++) {
+                    if (!(instance.SelectList[j].itemName == cells[j]))
+                    {
+                        isPosion = false;
+                    }
                 }
             }
             inventorySystemGUI.SetActive(true);

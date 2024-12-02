@@ -76,7 +76,7 @@ public class book : MonoBehaviour
         {
             forwardButton.SetActive(true); //every time we turn the page back, the forward button should be activated
         }
-        if (index == -1)
+        if (index == 0)
         {
             backButton.SetActive(false); //if the page is first then we turn off the back button
         }
