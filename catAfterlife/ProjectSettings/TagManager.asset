@@ -8,6 +8,7 @@ TagManager:
   - RewardPanel
   - BackGroundMusic
   - pickUpContainer
+  - LevelManager
   layers:
   - Default
   - TransparentFX

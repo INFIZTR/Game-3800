@@ -7,8 +7,8 @@ public class DemoBehavior : MonoBehaviour
 {
     public bool display = false;
     public GameObject player;
+    public GameObject levelManager;
     float activeTime = 1.5f;
-    bool invoked = false;
 
 
     // Start is called before the first frame update
@@ -18,22 +18,34 @@ public class DemoBehavior : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
-       
+        if (levelManager == null)
+        {
+            levelManager = GameObject.FindGameObjectWithTag("LevelManager");
+        }
+
+        var lm = levelManager.GetComponent<LevelManager>();
+        if (lm.PuzzleInvoked(SceneManager.GetActiveScene().buildIndex))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void Update()
     {
         if (SceneManager.GetActiveScene().isLoaded)
         {
-            if (display && !invoked)
+            var lm = levelManager.GetComponent<LevelManager>();
+            int buildindex = SceneManager.GetActiveScene().buildIndex;
+            if (display && !lm.PuzzleInvoked(buildindex))
             {
-                invoked = true;
                 gameObject.SetActive(true);
                 var ps = player.GetComponent<PlayerMovementGrids>();
                 ps.LockPlayer();
 
                 // Start the coroutine to wait for the scene to load and then count down
                 Debug.Log(activeTime);
+
+                lm.AddNewIndex(buildindex);
 
                 StartCoroutine(WaitForSceneAndSetInactive(activeTime));
             }

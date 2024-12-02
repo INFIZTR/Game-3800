@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 174434582}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64849,6 +64849,10 @@ PrefabInstance:
     - target: {fileID: 2227231767223980064, guid: ee54b581e1776a74b9139c16f47550c4, type: 3}
       propertyPath: m_Name
       value: Level Demonstrate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2227231767223980064, guid: ee54b581e1776a74b9139c16f47550c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5805160143499645189, guid: ee54b581e1776a74b9139c16f47550c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

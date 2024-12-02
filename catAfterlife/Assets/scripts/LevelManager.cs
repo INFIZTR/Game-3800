@@ -44,6 +44,9 @@ public class LevelManager : MonoBehaviour
     // "static" to maintain the scope
     private static GameObject container;
 
+    // store the index of puzzles that player has already entered.
+    private static List<int> puzzlesThatHasTriggered = new List<int>();
+
 
     private void OnDestroy()
     {
@@ -131,7 +134,6 @@ public class LevelManager : MonoBehaviour
             if (temp_parent != null)
             {
                 temp_parent.SetActive(true);
-                Debug.Log($"Set {currentSceneIndex} item container active.");
             }
             else
             {
@@ -219,6 +221,18 @@ public class LevelManager : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    // given a puzzle index, determine if that puzzle has already been invoked before
+    public bool PuzzleInvoked(int index)
+    {
+        return puzzlesThatHasTriggered.Contains(index);
+    }
+
+    // add new index to the puzzle index list
+    public void AddNewIndex(int index)
+    {
+        puzzlesThatHasTriggered.Add(index);
     }
 
 
