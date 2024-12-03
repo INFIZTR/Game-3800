@@ -112,54 +112,49 @@ public class PlayerMovementGrids : MonoBehaviour
     void FixedUpdate()
     {
         // only allows if game not over
-        if (currentStep<totalSteps && !loadNextLevel)
+        if (currentStep < totalSteps && !loadNextLevel)
         {
-            // Move the player
-            //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-            if (movement != Vector2.zero)
+            // detect if there's input from player
+            // current direction to move is valid
+            // player not already sliding
+            if (movement != Vector2.zero && CanMove(movement) && !moving)
             {
-                // remember the movement
-                if (CanMove(movement) && !moving)
+                Vector2 store = movement;
+                moving = true;
+                currentStep++;
+
+                // need to render player's current tile if moving for the first time
+                if (moveForFirstTime)
                 {
-                    Vector2 store = movement;
-                    moving = true;
-                    currentStep++;
-                    if (moveForFirstTime)
-                    {
-                        Vector3Int init = groundTilemap.WorldToCell(transform.position);
-                        //playerTracemap.SetTile(init, tileBase);
-                        //initiatedTilePos.Add(init);
-                        //countNewTile++;
-                        setupTile(init, store);
-                        moveForFirstTime = false;
-                    }
-                    Vector2 moveAmount = store.normalized * 2;
-                    Vector3Int vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
-                    // modify player's movement and setup new tile
-                    if (!initiatedTilePos.Contains(vi))
-                    {
-                        setupTile(vi, store);
-                    }
+                    Vector3Int init = groundTilemap.WorldToCell(transform.position);
+                    setupTile(init, store);
+                    moveForFirstTime = false;
+                }
 
+                Vector2 moveAmount = store.normalized * 2;
+                Vector3Int vi = groundTilemap.WorldToCell(transform.position += (Vector3)moveAmount);
 
-                    for (int i = 0; i < 7; i++)
+                // modify player's movement and setup new tile
+                if (!initiatedTilePos.Contains(vi))
+                {
+                    setupTile(vi, store);
+                }
+
+                for (int i = 0; i < 7; i++)
+                {
+                    if (CanMove(store))
                     {
-                        if (CanMove(store))
+                        vi = groundTilemap.WorldToCell(transform.position += (Vector3)moveAmount);
+                        if (!initiatedTilePos.Contains(vi))
                         {
-                            vi = groundTilemap.WorldToCell(transform.position += (UnityEngine.Vector3)moveAmount);
-                            if (!initiatedTilePos.Contains(vi))
-                            {
-                                setupTile(vi, store);
-                            }
+                            setupTile(vi, store);
                         }
                     }
-
-                    moving = false;
-
                 }
+
+                moving = false;
             }
 
-            //UnityEngine.Debug.Log(countNewTile);
             if (countNewTile >= levelFinishTile && !loadNextLevel)
             {
                 StartCoroutine(DelayNextLevel(2));
@@ -177,10 +172,9 @@ public class PlayerMovementGrids : MonoBehaviour
     }
 
     
-    private bool CanMove(UnityEngine.Vector2 direction)
+    private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = groundTilemap.WorldToCell(transform.position + 2*(Vector3)direction);
-        //if (!groundTilemap.HasTile(gridPosition) || collisionTilemap.HasTile(gridPosition))
         if (!groundTilemap.HasTile(gridPosition))
         {
             return false;
