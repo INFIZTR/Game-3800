@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2361865161712465194}
   - component: {fileID: 7556053964002054886}
   - component: {fileID: 6431295320870174637}
+  - component: {fileID: 9177193497349458896}
   m_Layer: 0
   m_Name: gemrock
   m_TagString: Untagged
@@ -320,6 +321,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9177193497349458896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592276526576980625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f60748feafe9744b6367a7630654a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4497548420338957469
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +525,10 @@ PrefabInstance:
       propertyPath: spriteR
       value: 
       objectReference: {fileID: 5854927553029086962}
+    - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
+      propertyPath: requiredItem
+      value: 
+      objectReference: {fileID: 4951515415505757021, guid: 4e8bcbf6781a1334c8e761446dd0a8ab, type: 3}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_second
       value: 

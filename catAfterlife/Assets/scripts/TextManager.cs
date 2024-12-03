@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -178,6 +179,14 @@ public class TextManager : MonoBehaviour
                 triggerCount++;
                 dialogIndex = 0;
                 //Start();
+
+                // if this textfile will trigger gem leave the current scene
+                if (cells[cells.Length - 1].Contains("gemLeave"))
+                {
+                    var ts = gameObject.GetComponent<GemBehavior>();
+                    ts.LeaveScene();
+                }
+
                 TalkingGUI.SetActive(false);
                 InventoryGUI.SetActive(true);
             }
@@ -262,5 +271,11 @@ public class TextManager : MonoBehaviour
         {
             GenerateText(currentText);
         }
+    }
+
+    // get the current text file name
+    public string GetCurrentText()
+    {
+        return currentText.name;
     }
 }
