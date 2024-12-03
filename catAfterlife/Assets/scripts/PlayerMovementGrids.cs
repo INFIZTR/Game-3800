@@ -80,7 +80,7 @@ public class PlayerMovementGrids : MonoBehaviour
                 stepsText.SetText(newText);
             }
 
-            if (totalSteps - currentStep <= 0)
+            if (totalSteps - currentStep <= 0 && !loadNextLevel)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
