@@ -10,15 +10,15 @@ public class SelectedController : MonoBehaviour
     public List<CollectableItem> SelectList = new List<CollectableItem>();
     public GameObject slotGtid;
     public SlotManager slot;
-    
-    public CollectableItem posion;
+
+    //public CollectableItem posion;
     public GameObject posionGUI;
     public GameObject inventorySystemGUI;
-    
+
     public TextAsset posionRecipe;
     private string[] recipeRows;
     public List<CollectableItem> posionList = new List<CollectableItem>();
-    
+
     void Awake()
     {
         if (instance != null)
@@ -26,8 +26,11 @@ public class SelectedController : MonoBehaviour
             Destroy(this);
         }
         instance = this;
+
+        //Debug.Log(posionList.Find(x => x.itemName == "Gem Potion").name);
+
     }
-    
+
     public static void RefreshList()
     {
         for (int i = instance.slotGtid.transform.childCount - 1; i >= 0; i--)
@@ -40,7 +43,7 @@ public class SelectedController : MonoBehaviour
             CreatePosionList(instance.SelectList[j]);
         }
     }
-    
+
 
     public static void AddList(CollectableItem thisItem)
     {
@@ -52,12 +55,12 @@ public class SelectedController : MonoBehaviour
     }
     public static void CreatePosionList(CollectableItem item)
     {
-        SlotManager newSlot = Instantiate(instance.slot, instance.slotGtid.transform.position,Quaternion.identity);
+        SlotManager newSlot = Instantiate(instance.slot, instance.slotGtid.transform.position, Quaternion.identity);
         newSlot.gameObject.transform.SetParent(instance.slotGtid.transform);
         newSlot.slotItem = item;
         newSlot.slotImage.sprite = item.itemSprite;
     }
-    
+
     public static bool RemoveList(CollectableItem thisItem)
     {
         if (instance.SelectList.Count > 0)
@@ -82,29 +85,48 @@ public class SelectedController : MonoBehaviour
             posionGUI.SetActive(false);
         }
     }
-    
+
     public void ReadRecipe()
     {
         recipeRows = posionRecipe.text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+        // examine each row in the recipe file
         for (int i = 1; i < recipeRows.Length; i++)
         {
-            bool isPosion = true;
+            bool isPotion = false;
             string[] cells = recipeRows[i].Split('\t');
-            //if (cells.Length == 4)
+
+            // count how many ingredients selected matches the recipe
+            int matchItem = 0;
+
+            // examine if selected item matches the recipe
+            for (int j = 0; j < 4; j++)
             {
-                for (int j = 0; j < 4; j++) {
-                    if (!(instance.SelectList[j].itemName == cells[j]))
+                // go through each item in the recipe row
+                for (int k = 0; k < cells.Length; k++)
+                {
+                    if (instance.SelectList[j].itemName == cells[k])
                     {
-                        isPosion = false;
+                        matchItem++;
+                        break;
                     }
                 }
             }
-            inventorySystemGUI.SetActive(true);
-            if (isPosion)
+
+            // if all selected items matched
+            if (matchItem == 4)
             {
+                isPotion = true;
+            }
+
+            if (isPotion)
+            {
+                inventorySystemGUI.SetActive(true);
                 SelectList.Clear();
                 RefreshList();
                 inventory.AddNew(posionList.Find(x => x.itemName == cells[4]));
+                //Debug.Log(11 + " " + cells[4]);
+                //Debug.Log(posionList.Find(x => x.itemName == cells[4]).name);
                 posionGUI.SetActive(false);
                 PosionManager.numOfIngradient = 0;
                 break;

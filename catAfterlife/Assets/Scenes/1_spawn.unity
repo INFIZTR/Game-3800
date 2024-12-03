@@ -1321,6 +1321,7 @@ MonoBehaviour:
   posionList:
   - {fileID: 7341572330770411073, guid: 0d4af13f40e724b4fbfa2b695c13c325, type: 3}
   - {fileID: 7341572330770411073, guid: 15ffe5b039910ef40a728d9d56880132, type: 3}
+  - {fileID: 4951515415505757021, guid: 4e8bcbf6781a1334c8e761446dd0a8ab, type: 3}
 --- !u!114 &456958777
 MonoBehaviour:
   m_ObjectHideFlags: 0
