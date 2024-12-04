@@ -28,7 +28,6 @@ public class SelectedController : MonoBehaviour
         instance = this;
 
         //Debug.Log(posionList.Find(x => x.itemName == "Gem Potion").name);
-
     }
 
     public static void RefreshList()

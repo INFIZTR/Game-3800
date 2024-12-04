@@ -86,7 +86,7 @@ public class TextManager : MonoBehaviour
     {
         // check if player already acquired speacial item,
         // if so display new button
-        if (containsItem() && !afterGivenItem)
+        if (containsItem() && !afterGivenItem && triggerCount >0)
         {
             currentText = textAsset_withItem;
         }

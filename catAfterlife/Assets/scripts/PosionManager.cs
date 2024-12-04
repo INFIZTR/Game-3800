@@ -95,13 +95,4 @@ public class PosionManager : MonoBehaviour
         instance.inventory.ReturnUse(thisItem);
     }
 
-    public void Start()
-    {
-       
-    }
-
-    public void Update()
-    {
-        //RefreshPosionList();
-    }
 }

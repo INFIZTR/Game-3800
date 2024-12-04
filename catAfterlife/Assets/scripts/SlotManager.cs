@@ -25,9 +25,7 @@ public class SlotManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
    }
    public void ItemOnClickedR()
    {
-      //Debug.Log("ClickedR");
       bool success = SelectedController.RemoveList(slotItem);
-      //Debug.Log(success);
       if (success)
       {
          PosionManager.ReturnOneThing(slotItem);
