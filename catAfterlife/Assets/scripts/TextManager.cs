@@ -166,6 +166,15 @@ public class TextManager : MonoBehaviour
                 UpdateImage(cells[2], cells[3]);
 
                 dialogIndex = int.Parse(cells[5]);
+
+                // if this textfile will trigger gem leave the current scene
+                if (cells[cells.Length - 1].Contains("gemLeave"))
+                {
+                    Debug.Log("keyword found");
+                    GemBehavior ts = FindObjectOfType<GemBehavior>();
+                    ts.LeaveScene();
+                }
+
                 break;
             }
             else if (cells[0] == "&" && int.Parse(cells[1]) == dialogIndex)
@@ -179,13 +188,6 @@ public class TextManager : MonoBehaviour
                 triggerCount++;
                 dialogIndex = 0;
                 //Start();
-
-                // if this textfile will trigger gem leave the current scene
-                if (cells[cells.Length - 1].Contains("gemLeave"))
-                {
-                    var ts = gameObject.GetComponent<GemBehavior>();
-                    ts.LeaveScene();
-                }
 
                 TalkingGUI.SetActive(false);
                 InventoryGUI.SetActive(true);

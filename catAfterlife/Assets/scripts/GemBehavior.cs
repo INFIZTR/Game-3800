@@ -8,6 +8,7 @@ public class GemBehavior : MonoBehaviour
 
     public void LeaveScene()
     {
+        Debug.Log("leave!");
         StartCoroutine(FadeOutAndDeactivate());
     }
 
