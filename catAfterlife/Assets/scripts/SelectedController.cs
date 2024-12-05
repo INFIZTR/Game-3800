@@ -30,6 +30,22 @@ public class SelectedController : MonoBehaviour
         //Debug.Log(posionList.Find(x => x.itemName == "Gem Potion").name);
     }
 
+    public void Close()
+    {
+        foreach (CollectableItem collectableItem in SelectList)
+        {
+            PosionManager.ReturnOneThing(collectableItem);
+        }
+        for(int i = SelectList.Count - 1; i >= 0; i--)
+        {
+            bool success = instance.SelectList.Remove(SelectList[0]);
+        }
+
+        RefreshList();
+        posionGUI.SetActive(false);
+        inventorySystemGUI.SetActive(true);
+    }
+
     public static void RefreshList()
     {
         for (int i = instance.slotGtid.transform.childCount - 1; i >= 0; i--)
