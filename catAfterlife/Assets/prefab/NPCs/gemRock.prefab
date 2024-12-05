@@ -107,7 +107,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.88, y: 2.58, z: 0}
   m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8923844474056195637}
   - {fileID: 4010043799748790051}
@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f60748feafe9744b6367a7630654a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 3
-  moveDistance: 10
+  fadeDuration: 3.5
+  moveDistance: 30
   moveSpeed: 5
   trigger: 0
 --- !u!1 &4497548420338957469
@@ -363,8 +363,8 @@ Transform:
   m_GameObject: {fileID: 4497548420338957469}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.7, y: -0.3, z: 0}
-  m_LocalScale: {x: 1.64, y: 1.64, z: 0.65599996}
+  m_LocalPosition: {x: 10.57, y: -3.81, z: 0}
+  m_LocalScale: {x: 0.3608, y: 0.33128002, z: 0.65599996}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3074614952118257854}
@@ -410,7 +410,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 28d7d4bfb4be91e4eb1cd19ff47514fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0b2acf89f864b04b8c3da380bb0c0ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -540,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_default
       value: 
-      objectReference: {fileID: 4900000, guid: cc0e42cd3d65f4443ad2b583bbb2b464, type: 3}
+      objectReference: {fileID: 4900000, guid: f0a545379457c6d428dc7c72cf6e644f, type: 3}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_withItem
       value: 
@@ -548,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_afterItem
       value: 
-      objectReference: {fileID: 4900000, guid: e54d1802852318d4099b66f53da1ebd9, type: 3}
+      objectReference: {fileID: 4900000, guid: f52e8128a36d5e64494960e3e3fb6ffa, type: 3}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAssets.Array.size
       value: 1

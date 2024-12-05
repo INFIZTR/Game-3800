@@ -6,10 +6,13 @@ public class GemBehavior : MonoBehaviour
 {
     public float fadeDuration = 1f;      
     public float moveDistance = 5f;    
-    public float moveSpeed = 2f;      
+    public float moveSpeed = 2f;  
     public bool trigger = false;
 
     private TalkController talkController;
+
+    // if the player already handin the potion
+    private static bool afterPotion = false;
 
     private void Update()
     {
@@ -65,6 +68,13 @@ public class GemBehavior : MonoBehaviour
             transform.position = targetPosition;
         }
 
+        afterPotion = true;
         gameObject.SetActive(false);
+    }
+
+    // return the status of gem, true if gem already received potion
+    public bool GetStatusOfGem()
+    {
+        return afterPotion;
     }
 }
