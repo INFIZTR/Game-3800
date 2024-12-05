@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class GemBehavior : MonoBehaviour
 {
-    public float fadeDuration = 1f; 
-    public float moveDistance = 5f; 
+    public float fadeDuration = 1f;      
+    public float moveDistance = 5f;    
+    public float moveSpeed = 2f;      
+    public bool trigger = false;
+
+    private TalkController talkController;
+
+    private void Update()
+    {
+        // can delete, simply for easier to test
+        if (trigger)
+        {
+            LeaveScene();
+            trigger = false;
+        }
+    }
 
     public void LeaveScene()
     {
@@ -15,40 +29,42 @@ public class GemBehavior : MonoBehaviour
 
     private IEnumerator FadeOutAndDeactivate()
     {
+        if (talkController == null)
+        {
+            talkController = GetComponent<TalkController>();
+        }
+        talkController.Leaving();
+
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
             Color originalColor = spriteRenderer.color;
-            float elapsedTime = 0f;
 
-            // Original and target positions
+            // original and target positions
             Vector3 originalPosition = transform.position;
             Vector3 targetPosition = originalPosition + new Vector3(moveDistance, 0f, 0f);
 
-            while (elapsedTime < fadeDuration)
+            // calculate the total time needed to reach the target based on speed
+            float moveDuration = moveDistance / moveSpeed;
+
+            float elapsedTime = 0f;
+
+            while (elapsedTime < moveDuration)
             {
                 elapsedTime += Time.deltaTime;
-                float t = elapsedTime / fadeDuration;
 
-                // Easing function (optional)
-                float easeT = t < 0.5f ? 2f * t * t : -1f + (4f - 2f * t) * t;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-                // Fade out
-                float alpha = Mathf.Lerp(1f, 0f, t);
+                float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
                 spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
-
-                // Move to the right with easing
-                transform.position = Vector3.Lerp(originalPosition, targetPosition, easeT);
 
                 yield return null;
             }
 
-            // Ensure final state
             spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
             transform.position = targetPosition;
         }
 
-        // Deactivate the GameObject after the fade-out
         gameObject.SetActive(false);
     }
 }

@@ -9,6 +9,13 @@ public class TalkController : MonoBehaviour
     public GameObject CanvesGUI;
     public GameObject inventorySystemGUI;
 
+    //for gem rock, set talk function inactive while rocks moving
+    private bool leavingScene = false;
+
+    public void Leaving()
+    {
+        leavingScene = true;
+    }
 
     private void Start()
     {
@@ -16,7 +23,10 @@ public class TalkController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Button.SetActive(true);
+        if (!leavingScene)
+        {
+            Button.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -333,6 +333,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f60748feafe9744b6367a7630654a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 3
+  moveDistance: 10
+  moveSpeed: 5
+  trigger: 0
 --- !u!1 &4497548420338957469
 GameObject:
   m_ObjectHideFlags: 0
