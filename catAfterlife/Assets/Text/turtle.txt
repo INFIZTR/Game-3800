@@ -1,25 +1,25 @@
 Tag	ID	Name	Position	Text	JumpTo
-#	0	Witch	R	"I still do not know what I am supposed to do here. I feel like I am just wandering, searching without understanding why."	1
-#	1	Turtle	L	"Wandering is part of it, little one, but your path has always been there, waiting for you. You just need to see it."	2
+#	0	Witch	R	I still do not know what I am supposed to do here. I feel like I am just wandering, searching without understanding why.	1
+#	1	Turtle	L	Wandering is part of it, little one, but your path has always been there, waiting for you. You just need to see it.	2
 #	2	Witch	R	But what is the path? How do I find the answers I need?	3
-#	3	Turtle	L	"You here have to help your friends move on to their final lives, yes, but there is more to it. To succeed, "	4
-#	4	Turtle	L	"you must gather the ingredients that will shape the potion for every reincarnation. Each ingredient is a key to our next lives, and it is up to you to find them."	5
+#	3	Turtle	L	You here have to help your friends move on to their final lives, yes, but there is more to it. To succeed, 	4
+#	4	Turtle	L	you must gather the ingredients that will shape the potion for every reincarnation. Each ingredient is a key to our next lives, and it is up to you to find them.	5
 #	5	Witch	R	Gather ingredients. . . but where do I find them?	6
-#	6	Turtle	L	"The world of limbo is vast, with many regions, each different from the other. Some places are warm and bright, others are cold and harsh. "	7
-#	7	Turtle	L	"The ingredients you seek grow in these places, hidden or protected by the environment itself. But remember, not all will come freely."	8
-#	8	Turtle	L	"Some will be guarded, others locked behind puzzles that will test your wits."	9
-#	9	Witch	R	"Puzzles, and guarded ingredients? So I have to solve challenges to collect what I need?"	10
-#	10	Turtle	L	"Yes. In each region, you will encounter trials: puzzles that require you to think, to remember, and sometimes to ask for help. But you are not without power."	11
+#	6	Turtle	L	The world of limbo is vast, with many regions, each different from the other. Some places are warm and bright, others are cold and harsh. 	7
+#	7	Turtle	L	The ingredients you seek grow in these places, hidden or protected by the environment itself. But remember, not all will come freely.	8
+#	8	Turtle	L	Some will be guarded, others locked behind puzzles that will test your wits.	9
+#	9	Witch	R	Puzzles, and guarded ingredients? So I have to solve challenges to collect what I need?	10
+#	10	Turtle	L	Yes. In each region, you will encounter trials: puzzles that require you to think, to remember, and sometimes to ask for help. But you are not without power.	11
 #	11	Turtle	L	You are a potion maker. A witch with cunning craft.	12
-#	12	Turtle	L	"As you gather ingredients, you can also brew potions along the way: potions to heal, to strengthen, and even to reveal hidden paths."	13
-#	13	Witch	R	"And once I possess the needed ingredients. . . I will brew the final potions. . . The keys to reincarnating all of our friends, right?"	14
-#	14	Turtle	L	"Yes. But remember, brewing a potion is no simple task. Each ingredient must be chosen carefully, based on what you learn along the way."	15
-#	15	Turtle	L	"The potions must reflect the deepest wishes of the recipients: a loving home, a long life, and friends to share it with."	16
+#	12	Turtle	L	As you gather ingredients, you can also brew potions along the way: potions to heal, to strengthen, and even to reveal hidden paths.	13
+#	13	Witch	R	And once I possess the needed ingredients. . . I will brew the final potions. . . The keys to reincarnating all of our friends, right?	14
+#	14	Turtle	L	Yes. But remember, brewing a potion is no simple task. Each ingredient must be chosen carefully, based on what you learn along the way.	15
+#	15	Turtle	L	The potions must reflect the deepest wishes of the recipients: a loving home, a long life, and friends to share it with.	16
 #	16	Turtle	L	Or even more. And should you fail to choose the right ingredients. . .	17
 #	17	Witch	R	. . . then I fail your expectations.	18
-#	18	Turtle	L	"Yes but no. It is okay, we all trust you and love you. But do not fear failure, little one. The world of limbo is forgiving. If you stumble, you can always try again. "	19
-#	19	Turtle	L	"The puzzles will remain, and the ingredients will wait. But only when you truly understand the hearts of your friends,"	20
-#	20	Turtle	L	?Only then will you be able to brew the potion that grants them the perfect final endings.	21
-#	21	Witch	R	"I understand now. I need to explore, solve these puzzles, gather the right ingredients, and brew potions along the way to help me. It is all part of my journey."	22
-#	22	Turtle	L	"Exactly. Each step brings you closer, not just to helping her, but to understanding yourself. Now, go. The path is waiting for you. Go left and you will know what to do next"	23
-END	23				
+#	18	Turtle	L	Yes but no. It is okay, we all trust you and love you. But do not fear failure, little one. The world of limbo is forgiving. If you stumble, you can always try again. 	19
+#	19	Turtle	L	The puzzles will remain, and the ingredients will wait. But only when you truly understand the hearts of your friends,	20
+#	20	Turtle	L	Only then will you be able to brew the potion that grants them the perfect final endings.	21
+#	21	Witch	R	I understand now. I need to explore, solve these puzzles, gather the right ingredients, and brew potions along the way to help me. It is all part of my journey.	22
+#	22	Turtle	L	Exactly. Each step brings you closer, not just to helping her, but to understanding yourself. Now, go. The path is waiting for you. Go left and you will know what to do next	23
+END	23

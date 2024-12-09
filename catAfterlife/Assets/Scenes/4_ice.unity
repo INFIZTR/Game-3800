@@ -6570,6 +6570,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035864364}
   m_CullTransparentMesh: 1
+--- !u!1 &1038854123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7627968709398523605, guid: c8aff07f202721942a25959c96fcbc75, type: 3}
+  m_PrefabInstance: {fileID: 8936413270290114413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1045758243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2022741823732057348, guid: 33203898840649f419bcaf5d70b5569b, type: 3}
+  m_PrefabInstance: {fileID: 82225903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047852946
 GameObject:
   m_ObjectHideFlags: 0
@@ -7877,6 +7887,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7560540162976105524, guid: c07360758d05366469cc2cc2ed9f4b1d, type: 3}
   m_PrefabInstance: {fileID: 7846104408284481012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1285043558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5156000598857439552, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
+  m_PrefabInstance: {fileID: 6627505505601066320}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1327713320
 PrefabInstance:
@@ -13275,6 +13290,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: swans
       objectReference: {fileID: 0}
+    - target: {fileID: 2773401150094074148, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1038854123}
+    - target: {fileID: 2773401150094074148, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
+      propertyPath: InventoryGUI
+      value: 
+      objectReference: {fileID: 1045758243}
     - target: {fileID: 4081834190697652800, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.6
@@ -13313,6 +13336,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4081834190697652800, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681393585079315406, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
+      propertyPath: CanvesGUI
+      value: 
+      objectReference: {fileID: 1285043558}
+    - target: {fileID: 4681393585079315406, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
+      propertyPath: inventorySystemGUI
+      value: 
+      objectReference: {fileID: 1045758243}
+    - target: {fileID: 5156000598857439552, guid: dc1ffa80b14d4094ab216453a7fa12a5, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

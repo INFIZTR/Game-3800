@@ -1,0 +1,15 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Swans	R	Ah, the Witch has arrived. Graceful, as always.	1
+#	1	Witch	L	Swans... talking swans? What kind of magic is this?	2
+#	2	Swans	R	No magic, dear Witch. Just an urgent need that brought us to your presence.	3
+#	3	Witch	L	And what is it that you need? Let me guess—it’s a potion, isn’t it?	4
+#	4	Swans	R	Indeed, a potion most delicate. One to break the curse that binds us to these forms.	5
+#	5	Witch	L	A curse? Who could have done this to you?	6
+#	6	Swans	R	An envious mage with a heart as cold as the winter’s frost. But that is a tale for another time.	7
+#	7	Swans	R	Will you help us, Witch? We cannot return to our true selves without your mastery of potions.	8
+#	8	Witch	L	Hmm... Another task. But maybe this could lead me closer to the answers I seek.	9
+#	9	Witch	L	Fine. But I will need to know the ingredients and the specifics of this potion.	10
+#	10	Swans	R	We can guide you to the ingredients. The rest, we leave to your expertise.	11
+#	11	Witch	L	Alright. Tell me what I need, and I will see what I can do.	12
+#	12	Swans	R	Thank you, Witch. We will await your return. Do not delay too long, for the curse tightens its grip with each passing day.	13
+END	13

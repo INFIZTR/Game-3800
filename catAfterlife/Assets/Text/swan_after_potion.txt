@@ -1,0 +1,14 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Male Swan	R	Do you... do you really think this will work? What if... I mess it up somehow?	1
+#	1	Female Swan	R	The potion would not drink itself. And if it does not work, well, it is not like you would turn into something worse than a jittery ball of feathers.	2
+#	2	Male Swan	R	You always know how to make me feel... um, not better exactly, but, uh...	3
+#	3	Female Swan	R	Look, just take it. If you want to tell me something, you’ll need all the courage you can get. Trust me, this limbo is cold enough without dragging this awkwardness out forever.	4
+#	4	Male Swan	R	I just… want to say it right this time.	5
+#	5	Female Swan	R	You already did. The first time... before the hunter, before all this. You did NOT mess it up. You saved me, at least you tried your best. That is the bravest thing anyone has ever done for me. I do not need a potion to see who you really are.	6
+#	6	Male Swan	R	But... maybe a little bravery boost would not hurt?	7
+#	7	Male Swan	R	(He tilts his head back and downs the potion. A warm, golden aura envelops him, and he straightens his posture, his voice steadier.)	8
+#	8	Male Swan	R	There’s something I have been wanting to say since before... well, since before we ended up here. I—	9
+#	9	Female Swan	R	Oh, for crying out loud! Just tell me already.	10
+#	10	Male Swan	R	I love you! I loved you before Limbo, and I love you now… And I would love you more. I just... I want to spend whatever comes next with you.	11
+#	11	Female Swan	R	Took you long enough, featherbrain. I love you too. Always have.	12
+END	12
