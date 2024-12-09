@@ -377,7 +377,7 @@ PrefabInstance:
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_second
       value: 
-      objectReference: {fileID: 4900000, guid: 4f74233828aed8f40a6baf874f637cca, type: 3}
+      objectReference: {fileID: 4900000, guid: 5f439bd4b9968d747afbb1ebdc2532fb, type: 3}
     - target: {fileID: 7941288513022263642, guid: 900e1e06c1e9e814c91861c6b97fe751, type: 3}
       propertyPath: textAsset_default
       value: 

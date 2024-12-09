@@ -1,0 +1,4 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Gem	R	Hello again!	1
+#	1	Gem	R	Better continue the journey!	2
+END	2

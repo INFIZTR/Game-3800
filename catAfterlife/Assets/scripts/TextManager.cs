@@ -67,7 +67,7 @@ public class TextManager : MonoBehaviour
     // helper method to find if a certain item is inside player's inventory
     private bool containsItem()
     {
-        var invs = InventoryGUI.GetComponent<InventoryManager>();
+        var invs = InventoryGUI.GetComponent<InventoryManager>(); 
        
         return invs.inventory.itemList.Contains(requiredItem);
     }
