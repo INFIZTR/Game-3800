@@ -20,9 +20,9 @@ public class LavariverBehavior : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    // move gem on the river
+    public void MoveGem()
     {
-        
+
     }
 }

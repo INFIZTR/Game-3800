@@ -50,6 +50,9 @@ public class TextManager : MonoBehaviour
     // after player handling the item to the npc
     private bool afterGivenItem = false;
 
+    // used in lava river scene; other scene can just leave as null
+    public GameObject lavaRiverManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -187,6 +190,13 @@ public class TextManager : MonoBehaviour
                 {
                     GemBehavior ts = FindObjectOfType<GemBehavior>();
                     ts.LeaveScene();
+                }
+
+                // if at the lava river, call the target method
+                if (lavaRiverManager != null)
+                {
+                    var lr = lavaRiverManager.GetComponent<LavariverBehavior>();
+                    lr.MoveGem();
                 }
 
                 TalkingGUI.SetActive(false);
