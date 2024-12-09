@@ -12,6 +12,7 @@ public class LavariverBehavior : MonoBehaviour
         Gem.SetActive(false);
         GemBehavior gb = Gem.GetComponent<GemBehavior>();
 
+        Debug.Log((gb.GetStatusOfGem()));
         // set Gem as active if player already handin potion in lava region
         if (gb.GetStatusOfGem())
         {

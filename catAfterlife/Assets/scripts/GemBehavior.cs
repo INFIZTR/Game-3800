@@ -12,7 +12,7 @@ public class GemBehavior : MonoBehaviour
     private TalkController talkController;
 
     // if the player already handin the potion
-    private static bool afterPotion = false;
+    public static bool afterPotion = false;
 
     private void Update()
     {
@@ -32,6 +32,8 @@ public class GemBehavior : MonoBehaviour
 
     private IEnumerator FadeOutAndDeactivate()
     {
+        afterPotion = true;
+
         if (talkController == null)
         {
             talkController = GetComponent<TalkController>();
@@ -68,7 +70,7 @@ public class GemBehavior : MonoBehaviour
             transform.position = targetPosition;
         }
 
-        afterPotion = true;
+
         gameObject.SetActive(false);
     }
 
