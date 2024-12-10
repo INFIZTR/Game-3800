@@ -1219,6 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 388083216}
   - component: {fileID: 388083217}
+  - component: {fileID: 388083218}
   m_Layer: 5
   m_Name: Video Player
   m_TagString: Untagged
@@ -1253,7 +1254,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388083215}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 818f29e9fbab708449858976a46c0610, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1263,7 +1264,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -1271,7 +1272,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: file://D:/Game-3800/catAfterlife/Assets/animation/cauldronAnimation.avi
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -1281,6 +1282,20 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &388083218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388083215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08558fe4e6d1c3a4abf68595a65dd8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 388083217}
+  videoURL: https://yutong2000.github.io/VideoHostTest/cauldronAnimationFixed.mp4
 --- !u!1 &397459910
 GameObject:
   m_ObjectHideFlags: 0
