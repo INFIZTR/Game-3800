@@ -211,7 +211,7 @@ public class LevelManager : MonoBehaviour
     {
         loadingScreen.SetActive(true);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.6f);
 
         // load the next scene asynchronously
         UnityEngine.AsyncOperation operation = SceneManager.LoadSceneAsync(nextSceneIndex);

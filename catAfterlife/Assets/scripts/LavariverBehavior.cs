@@ -37,8 +37,7 @@ public class LavariverBehavior : MonoBehaviour
         // Disable the collider in the middle
         colliderInMid.gameObject.SetActive(false);
 
-        // Start the coroutine to move and scale the gem
-        StartCoroutine(MoveGemToPositionAndScale(gemToPlace.transform.position, targetScale, 2f)); // Moves and scales over 2 seconds
+        StartCoroutine(MoveGemToPositionAndScale(gemToPlace.transform.position, targetScale, 2f)); 
     }
 
     private IEnumerator MoveGemToPositionAndScale(Vector3 targetPosition, Vector3 targetScale, float duration)
@@ -51,20 +50,40 @@ public class LavariverBehavior : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
 
-            // Calculate the interpolation factor
             float t = elapsedTime / duration;
 
-            // Smoothly move the gem towards the target position
             Gem.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
 
-            // Smoothly scale the gem up towards the target scale
             Gem.transform.localScale = Vector3.Lerp(startScale, targetScale, t);
 
             yield return null;
         }
 
-        // Ensure the final position and scale are accurate
         Gem.transform.position = targetPosition;
         Gem.transform.localScale = targetScale;
+
+        DisableEverythingExceptSpriteRenderer(Gem);
+
     }
+
+    private void DisableEverythingExceptSpriteRenderer(GameObject obj)
+    {
+        Component[] components = obj.GetComponents<Component>();
+
+        foreach (Component component in components)
+        {
+            if (component is SpriteRenderer)
+                continue;
+
+            if (component is Behaviour behaviour)
+            {
+                behaviour.enabled = false;
+            }
+            else if (component is Collider collider)
+            {
+                collider.enabled = false;
+            }
+        }
+    }
+
 }

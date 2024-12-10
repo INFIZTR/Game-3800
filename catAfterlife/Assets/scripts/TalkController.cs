@@ -37,6 +37,11 @@ public class TalkController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (leavingScene)
+        {
+            Button.SetActive(false);
+        }
+
         if (Button.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             CanvesGUI.SetActive(true);
