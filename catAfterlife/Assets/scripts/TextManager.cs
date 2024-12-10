@@ -59,7 +59,7 @@ public class TextManager : MonoBehaviour
     {        
         currentText = textAsset_default;
         
-        GenerateText(currentText);
+        //GenerateText(currentText);
 
         if (player == null)
         {
@@ -74,9 +74,10 @@ public class TextManager : MonoBehaviour
        
         return invs.inventory.itemList.Contains(requiredItem);
     }
+
     public void Awake()
     {
-        triggerCount = 0;
+        //triggerCount = 0;
         nameImageDict["Witch"] = sprites[0];
         //This is for the darker version of the opposite image
         nameImageDict["WitchOP"] = sprites[3];
@@ -169,7 +170,7 @@ public class TextManager : MonoBehaviour
                 UpdateImage(cells[2], cells[3]);
 
                 dialogIndex = int.Parse(cells[5]);
-
+ 
 
                 break;
             }
@@ -265,6 +266,7 @@ public class TextManager : MonoBehaviour
 
         TalkingGUI.SetActive(true);
     }
+
     private void OnButtonClick(int id)
     {
         dialogIndex = id;

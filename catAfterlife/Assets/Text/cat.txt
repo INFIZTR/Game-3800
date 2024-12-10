@@ -1,5 +1,5 @@
 Tag	ID	Name	Position	Text	JumpTo
-#	0	Cat	R	Meowdy! ^w^	1
+#	0	Cat	R	Meowdy! ^w^	1	
 #	1	Witch	L	(A talking cat...?)	2
 #	2	Witch	L	What the... Who are you?	3
 #	3	Cat	R	My name is--	4
