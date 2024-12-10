@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -47,6 +48,12 @@ public class TextManager : MonoBehaviour
     // count how many times have the dialogue been invoked
     private int triggerCount = 0;
 
+    // store how many times have the dialogue been invoked and scene index as the key
+    // first int represent scene index
+    // second represent triggercount
+    private static Dictionary<int, int> sceneFieldStorage = new Dictionary<int, int>();
+
+
     // after player handling the item to the npc
     private bool afterGivenItem = false;
 
@@ -57,8 +64,19 @@ public class TextManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {        
-        currentText = textAsset_default;
-        
+        //currentText = textAsset_default;
+
+        // Get the current scene index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (!sceneFieldStorage.ContainsKey(currentSceneIndex))
+        {
+            // add a new entry with 0 as its value
+            sceneFieldStorage[currentSceneIndex] = 0;
+        }
+
+        triggerCount = sceneFieldStorage[currentSceneIndex];
+
         //GenerateText(currentText);
 
         if (player == null)
@@ -88,6 +106,17 @@ public class TextManager : MonoBehaviour
 
     private void OnEnable()
     {
+        // Get the current scene index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (!sceneFieldStorage.ContainsKey(currentSceneIndex))
+        {
+            // add a new entry with 0 as its value
+            sceneFieldStorage[currentSceneIndex] = 0;
+        }
+
+        triggerCount = sceneFieldStorage[currentSceneIndex];
+
         // check if player already acquired speacial item,
         // if so display new button
         if (containsItem() && !afterGivenItem && triggerCount >0)
@@ -183,6 +212,9 @@ public class TextManager : MonoBehaviour
             {
                 // increment the counter
                 triggerCount++;
+                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                sceneFieldStorage[currentSceneIndex] = triggerCount;
+                //Debug.Log(triggerCount);
                 dialogIndex = 0;
                 //Start();
 
