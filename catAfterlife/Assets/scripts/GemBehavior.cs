@@ -14,6 +14,14 @@ public class GemBehavior : MonoBehaviour
     // if the player already handin the potion
     public static bool afterPotion = false;
 
+    private void Start()
+    {
+        if (afterPotion == true)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     private void Update()
     {
         // can delete, simply for easier to test
