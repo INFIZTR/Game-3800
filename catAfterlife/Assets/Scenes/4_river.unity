@@ -527,6 +527,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gem: {fileID: 1592276528012430394}
+  colliderInMid: {fileID: 106931211706005219}
+  targetScale: {x: 0.24, y: 0.24, z: 0.24}
+  gemToPlace: {fileID: 1999416591}
 --- !u!1 &287914098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,8 +1330,7 @@ Transform:
   m_LocalPosition: {x: 3.3783586, y: -1.1686103, z: -0.026845567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 134265154612397507}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &863923265
@@ -5011,6 +5013,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4e4988a06353164cabf4fdceafdafe0, type: 3}
+--- !u!1 &1999416591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999416592}
+  m_Layer: 0
+  m_Name: GemPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1999416592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999416591}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.42, y: -1.22, z: 0.026246052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003714791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,11 +5236,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 736079155}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7701148616080228030, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
       propertyPath: m_Name
       value: lava_river
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208561726738759816, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: 4.7293434
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208561726738759816, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: -5.9490595
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208561726738759816, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: -0.29374534
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208561726738759816, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -1.2178838
       objectReference: {fileID: 0}
     - target: {fileID: 8754080731147948960, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
       propertyPath: m_LocalScale.y
@@ -5215,15 +5264,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8754080731147948960, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.63
+      value: -0.2516415
       objectReference: {fileID: 0}
     - target: {fileID: 8754080731147948960, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 0.031389713
       objectReference: {fileID: 0}
     - target: {fileID: 8754080731147948960, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.026845567
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8754080731147948960, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5253,14 +5302,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: 4.7916017
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: -5.25098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: 1.8260485
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -3.7503781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
+      value: -0.63069385
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763044218353639849, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
+      value: -1.364119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
---- !u!4 &134265154612397507 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8754080731147948960, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
+--- !u!1 &106931211706005219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1368213027387145000, guid: 64c2589b03d6a5949ae6842a5706fe89, type: 3}
   m_PrefabInstance: {fileID: 106931211706005218}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &836143574043840204
@@ -5279,6 +5356,14 @@ PrefabInstance:
       propertyPath: InventoryGUI
       value: 
       objectReference: {fileID: 1720335507}
+    - target: {fileID: 1949216776872781440, guid: bac3f6660cdbb5449a876b4b490d0a5d, type: 3}
+      propertyPath: lavaRiverManager
+      value: 
+      objectReference: {fileID: 174434580}
+    - target: {fileID: 2206652481529397194, guid: bac3f6660cdbb5449a876b4b490d0a5d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4428704116611511376, guid: bac3f6660cdbb5449a876b4b490d0a5d, type: 3}
       propertyPath: m_Name
       value: Gem_River
@@ -5654,3 +5739,5 @@ SceneRoots:
   - {fileID: 1995615434}
   - {fileID: 1509032304}
   - {fileID: 836143574043840204}
+  - {fileID: 106931211706005218}
+  - {fileID: 1999416592}
