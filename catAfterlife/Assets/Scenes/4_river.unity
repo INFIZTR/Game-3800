@@ -512,8 +512,10 @@ MonoBehaviour:
   blockDestroyedText: {fileID: 0}
   rewardPanel: {fileID: 1773276466}
   instantiateObjects: 1
-  instantiate_Pickup_Position: []
-  list_pickups: []
+  instantiate_Pickup_Position:
+  - {fileID: 1322836303}
+  list_pickups:
+  - {fileID: 8577651144611475574, guid: eed163f17b785e64bbdbd45d7ddac06d, type: 3}
 --- !u!114 &174434584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,7 +2092,7 @@ Transform:
   m_GameObject: {fileID: 1322836303}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.07, y: -0.46, z: -0.18594623}
+  m_LocalPosition: {x: 8.82, y: -4.79, z: -0.18594623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5360,6 +5362,10 @@ PrefabInstance:
       propertyPath: lavaRiverManager
       value: 
       objectReference: {fileID: 174434580}
+    - target: {fileID: 1949216776872781440, guid: bac3f6660cdbb5449a876b4b490d0a5d, type: 3}
+      propertyPath: textAsset_default
+      value: 
+      objectReference: {fileID: 4900000, guid: b5d8b5786101a9a4b87e2dbc5c4bfa0b, type: 3}
     - target: {fileID: 2206652481529397194, guid: bac3f6660cdbb5449a876b4b490d0a5d, type: 3}
       propertyPath: m_Enabled
       value: 1

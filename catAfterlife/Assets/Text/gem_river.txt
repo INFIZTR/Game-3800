@@ -1,0 +1,5 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Gem	R	Hey, seems like you found your way to making the potion.	1
+#	1	Witch	L	It was quite some rare ingredients to find, but yeah I finally made it!	2
+#	2	Gem	R	It works like a charm, now I am finally free from the boundary with the ground… Here is what I promised to you: a favor… Go beyond the larva river now, you will pass above me…	3
+END	3
