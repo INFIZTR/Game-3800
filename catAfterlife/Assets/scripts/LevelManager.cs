@@ -52,6 +52,7 @@ public class LevelManager : MonoBehaviour
     public GameObject fadingBlack;
     public GameObject gameEndScene;
     public float fadeDuration = 2f;
+    public float delayBeforeSceneLoad = 3f;
     public bool gameOverTrigger = false;
     private void OnDestroy()
     {
@@ -315,6 +316,12 @@ public class LevelManager : MonoBehaviour
 
         // Ensure gameEndScene is fully opaque
         gameEndImage.color = new Color(endColor.r, endColor.g, endColor.b, 1f);
+
+        yield return new WaitForSeconds(delayBeforeSceneLoad);
+
+
+        SceneManager.LoadScene("StartScene");
+
     }
 
 
