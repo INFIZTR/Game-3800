@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class LevelManager : MonoBehaviour
 {
@@ -47,7 +49,10 @@ public class LevelManager : MonoBehaviour
     // store the index of puzzles that player has already entered.
     private static List<int> puzzlesThatHasTriggered = new List<int>();
 
-
+    public GameObject fadingBlack;
+    public GameObject gameEndScene;
+    public float fadeDuration = 2f;
+    public bool gameOverTrigger = false;
     private void OnDestroy()
     {
         if (!instantiateObjects)
@@ -73,7 +78,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-
+        fadingBlack.SetActive(false);
+        gameEndScene.SetActive(false);
 
         if (invokeSceneForFirstTime && blockDestroyedText != null)
         {
@@ -90,6 +96,14 @@ public class LevelManager : MonoBehaviour
         }
 
         invokeSceneForFirstTime = false;
+    }
+
+    private void Update()
+    {
+        if (gameOverTrigger)
+        {
+            GameEnd();
+        }
     }
 
     private void Awake()
@@ -238,7 +252,69 @@ public class LevelManager : MonoBehaviour
 
     public void GameEnd()
     {
+        StartCoroutine(FadeInFadingBlack());
+    }
 
+
+    private IEnumerator FadeInFadingBlack()
+    {
+        // Ensure fadingBlack is active
+        fadingBlack.SetActive(true);
+
+        // Get the Image component of fadingBlack
+        Image fadingBlackImage = fadingBlack.GetComponent<Image>();
+        if (fadingBlackImage == null)
+        {
+            Debug.LogError("fadingBlack is missing an Image component.");
+            yield break;
+        }
+
+        // Gradually fade in fadingBlack
+        float elapsedTime = 0f;
+        Color blackColor = fadingBlackImage.color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            fadingBlackImage.color = new Color(blackColor.r, blackColor.g, blackColor.b, alpha);
+            yield return null;
+        }
+
+        // Ensure fadingBlack is fully opaque
+        fadingBlackImage.color = new Color(blackColor.r, blackColor.g, blackColor.b, 1f);
+
+        // Start fading in the gameEndScene after fadingBlack is fully opaque
+        StartCoroutine(FadeInGameEndScene());
+    }
+
+    private IEnumerator FadeInGameEndScene()
+    {
+        // Ensure gameEndScene is active
+        gameEndScene.SetActive(true);
+
+        // Get the Image component of gameEndScene
+        Image gameEndImage = gameEndScene.GetComponent<Image>();
+        if (gameEndImage == null)
+        {
+            Debug.LogError("gameEndScene is missing an Image component.");
+            yield break;
+        }
+
+        // Gradually fade in gameEndScene
+        float elapsedTime = 0f;
+        Color endColor = gameEndImage.color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            gameEndImage.color = new Color(endColor.r, endColor.g, endColor.b, alpha);
+            yield return null;
+        }
+
+        // Ensure gameEndScene is fully opaque
+        gameEndImage.color = new Color(endColor.r, endColor.g, endColor.b, 1f);
     }
 
 
