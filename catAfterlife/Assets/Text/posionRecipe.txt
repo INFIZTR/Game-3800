@@ -1,5 +1,5 @@
 Recipe1	Recipe2	Recipe3	Recipe3	outcome
-glacier Bell	moltenvine	millenium Fungus	infernoLotus	cat Potion
+glacier Bell	moltenvine	millenium Fungus	inferno Lotus	cat Potion
 lavagrapes	violet Clover	wildlily	moltenvine	Turtle Potion
 frost Fern	lavagrapes	booroot	violet Clover	Gem Potion
 

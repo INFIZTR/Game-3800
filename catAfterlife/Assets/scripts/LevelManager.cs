@@ -79,8 +79,12 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        fadingBlack.SetActive(false);
-        gameEndScene.SetActive(false);
+        if (fadingBlack != null && gameEndScene != null)
+        {
+            fadingBlack.SetActive(false);
+            gameEndScene.SetActive(false);
+        }
+
 
         if (invokeSceneForFirstTime && blockDestroyedText != null)
         {
