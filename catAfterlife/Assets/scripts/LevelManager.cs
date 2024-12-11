@@ -236,4 +236,10 @@ public class LevelManager : MonoBehaviour
     }
 
 
+    public void GameEnd()
+    {
+
+    }
+
+
 }

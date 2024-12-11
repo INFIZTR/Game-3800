@@ -1,0 +1,13 @@
+Tag	ID	Name	Position	Text	JumpTo
+#	0	Cat	R	I guess this is it… It’s been a pleasure with your companion in limbo, but my journey must go on by myself, alone…	1
+#	1	Witch	L	Me too, the time we spent together was priceless, I’m glad that I met you.	2
+#	2	Cat	R	Thank you… thank you for everything, for taking care of me, and brewing potions for me, I will never ever forget you!	3
+#	3	Cat	R	*Drank the potion*	4
+#	4	Cat	R	Ughh… this feeling… my head… ughhhhhhh!!!	5
+#	5	Witch	L	What is happening?! Are you OK??!	6
+#	6	Aside	M	Millions of memories floated into the Cat’s head, after a few seconds of realization, she jumped to the arms of the Witch, smiling, and tearing up.	7
+#	7	Cat	R	It was you! It was always you! I was not just a stray cat back then, I was YOUR cat!	8
+#	8	Cat	R	You always took good care of me, my dear, dear, Caitlyn, thank you, thank you very much…	9
+#	9	Aside	M	Caitlyn stood there, shocked, as the memory of them being together at the time on Earth… She can’t hold her tears any longer… Now, she just wants to enjoy every moment of this.	10
+#	10	Cat	R	The potion is affecting my body in limbo, I can feel it, I must go… It was great to meet you again, and I will say that each time, each time I meet you, no matter what… I will see you, in the next life…	11
+GAMEEND	11

@@ -60,6 +60,9 @@ public class TextManager : MonoBehaviour
     // used in lava river scene; other scene can just leave as null
     public GameObject lavaRiverManager;
 
+    // handle game-end
+    public GameObject levelManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -179,6 +182,11 @@ public class TextManager : MonoBehaviour
             //spriteR = nameImageDict[_name];
             //spriteL = nameImageDict[darkerOpposite];
         }
+        else if (position == "M")
+        {
+            spriteL.gameObject.SetActive(false);
+            spriteR.gameObject.SetActive(false);
+        }
     }
     
     private void GenerateText(TextAsset dialog)
@@ -208,13 +216,20 @@ public class TextManager : MonoBehaviour
                 isText = false;
                 GenerateBotton(i);
             }
+            // if game ends
+            else if (cells[0] == "GAMEEND" && int.Parse(cells[1]) == dialogIndex)
+            {
+                var lm = levelManager.GetComponent<LevelManager>();
+                TalkingGUI.SetActive(false);
+                InventoryGUI.SetActive(false);
+                lm.GameEnd();
+            }
             else if (cells[0] == "END" && int.Parse(cells[1]) == dialogIndex)
             {
                 // increment the counter
                 triggerCount++;
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 sceneFieldStorage[currentSceneIndex] = triggerCount;
-                //Debug.Log(triggerCount);
                 dialogIndex = 0;
                 //Start();
 
